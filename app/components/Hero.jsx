@@ -31,7 +31,7 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8 pb-45">
+    <div className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8 pb-50">
       {/* Main Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         {/* Logo */}
