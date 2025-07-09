@@ -5,42 +5,42 @@ import { Marquee } from "@/components/magicui/marquee";
 import { useLanguage } from "../context/LanguageContext";
 
 const reviews = [
-	{
-		name: "Jack",
-		username: "@jack",
-		body: "I've never seen anything like this before. It's amazing. I love it.",
-		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-	},
-	{
-		name: "Jill",
-		username: "@jill",
-		body: "I don't know what to say. I'm speechless. This is amazing.",
-		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-	},
-	{
-		name: "John",
-		username: "@john",
-		body: "I'm at a loss for words. This is amazing. I love it.",
-		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-	},
-	{
-		name: "Jane",
-		username: "@jane",
-		body: "I'm at a loss for words. This is amazing. I love it.",
-		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-	},
-	{
-		name: "Jenny",
-		username: "@jenny",
-		body: "I'm at a loss for words. This is amazing. I love it.",
-		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-	},
-	{
-		name: "James",
-		username: "@james",
-		body: "I'm at a loss for words. This is amazing. I love it.",
-		img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-	},
+  {
+    name: "Jack",
+    username: "@jack",
+    body: "I've never seen anything like this before. It's amazing. I love it.",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+  },
+  {
+    name: "Jill",
+    username: "@jill",
+    body: "I don't know what to say. I'm speechless. This is amazing.",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+  },
+  {
+    name: "John",
+    username: "@john",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+  },
+  {
+    name: "Jane",
+    username: "@jane",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+  },
+  {
+    name: "Jenny",
+    username: "@jenny",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+  },
+  {
+    name: "James",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+  },
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
@@ -67,8 +67,7 @@ export function MarqueeDemo() {
           className="font-medium text-black mb-16 text-start"
           style={{
             fontSize: '6vw',
-			    fontSize: 'clamp(40px, 6vw, 110px)',
-
+            fontSize: 'clamp(40px, 6vw, 110px)',
             maxWidth: '743px',
             lineHeight: 1,
           }}
@@ -88,11 +87,8 @@ export function MarqueeDemo() {
               <ReviewCard key={review.username} {...review} />
             ))}
           </Marquee>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white"></div>
         </div>
       </div>
     </section>
   );
 }
-

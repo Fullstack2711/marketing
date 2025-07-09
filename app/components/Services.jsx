@@ -38,7 +38,7 @@ const ServiceButton = ({ children }) => (
 function Services() {
   const { t } = useLanguage();
   return (
-    <section className="w-full bg-[#111111] py-24 flex flex-col items-center justify-center text-white relative z-10">
+    <section className="w-full bg-transparent py-24 flex flex-col items-center justify-center text-white relative z-10">
       <div className="w-full max-w-6xl mx-auto text-start px-8">
         
         {/* Sarlavha */}

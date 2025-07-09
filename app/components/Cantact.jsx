@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 const OrderForm = () => {
   const { t } = useLanguage();
   return (
-    <section className="w-full bg-[#111111] py-24 flex flex-col items-center justify-center text-white relative z-10">
+    <section className="w-full bg-transparent flex items-center justify-center text-white py-20 px-8 relative z-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
         
         {/* Left Side Title */}
