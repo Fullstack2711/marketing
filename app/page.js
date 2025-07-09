@@ -8,8 +8,7 @@ import ProfileCarousel from "./components/ProfileCarousel";
 import { MarqueeDemo } from "./components/GridCardImage";
 import Services from "./components/Services";
 import OrderForm from "./components/Cantact";
-import Footer from "./components/Footer";
-import InfoCompany from "./components/InfoCompany";
+ import InfoCompany from "./components/InfoCompany";
 import Loader from "./components/Loader";
 import SecondLoader from "./components/SecondLoader.jsx";
  
@@ -92,10 +91,9 @@ export default function Home() {
 
           <div className="bg-white h-[120px]" />
 
-          <div className="bg-[#111111]">
+          <div className="info">
             <InfoCompany />
-            <Footer />
-          </div>
+           </div>
         </div>
       </div>
     </>
