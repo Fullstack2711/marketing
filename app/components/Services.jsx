@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 // Xizmat tugmasi komponenti
 const ServiceButton = ({ children }) => (
-  <div className="group relative min-w-[260px] basis-[320px] flex-grow rounded-2xl p-px bg-amber-300/20 hover:bg-amber-300/40 transition-all duration-300 overflow-hidden">
+  <div className="group relative  min-w-[260px] basis-[320px] flex-grow rounded-2xl p-px bg-amber-300/20 hover:bg-amber-300/40 transition-all duration-300 overflow-hidden">
     {/* Spinning light effect on hover */}
     <div className="absolute inset-[-100%] w-[200%] h-[200%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 [mask:linear-gradient(black,transparent)] pointer-events-none">
       <div
@@ -15,11 +15,22 @@ const ServiceButton = ({ children }) => (
       />
     </div>
 
-    <div className="relative z-10 w-full h-full px-10 py-4 bg-[#111111] rounded-[15px] text-2xl font-light text-gray-300 group-hover:text-white transition-colors duration-300 flex items-center justify-center">
+    <div
+      className="relative z-10 w-full h-full px-10 py-4 bg-[#111111] rounded-[15px] text-gray-300 group-hover:text-white transition-colors duration-300 flex items-center justify-center"
+      style={{
+        fontFamily: "'PP Neue Montreal', sans-serif",
+        fontWeight: 300,
+        fontStyle: "normal",
+        fontSize: "30.8px",
+        lineHeight: 1,
+        letterSpacing: 0,
+      }}
+    >
       {children}
     </div>
   </div>
 );
+
 
 
 
@@ -31,7 +42,7 @@ function Services() {
       <div className="w-full max-w-6xl mx-auto text-start px-8">
         
         {/* Sarlavha */}
-        <h2 className=" title text-5xl font-light mb-12 text-white">
+        <h2 className=" title text-7xl font-light mb-12 text-white">
           {t('services_title')}
         </h2>
 

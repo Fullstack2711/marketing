@@ -50,19 +50,22 @@ const ProfileCard = ({
       </div>
 
       {/* Bottom Info: with smoother gradient and no visible blur lines */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/30 to-transparent backdrop-blur-[2px]">
-        <h3 className="text-2xl font-bold text-white mb-2 text-center">{name}</h3>
-        <p className="text-sm text-gray-300 text-center mb-4">
-          {profession}
-        </p>
-        <div className="flex justify-center">
-          <Link href="/team">
-            <button className="px-6 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-gray-200 transition">
-              learn more
-            </button>
-          </Link>
-        </div>
-      </div>
+    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 backdrop-blur-xs">
+  <div className="text-white font-bastardo text-center space-y-2">
+    <h3 className="text-2xl font-bold">Cineframe Khan</h3>
+    <p className="text-sm text-gray-300">
+      A videographer is a professional who captures moving images using a video camera.
+    </p>
+    <div className="flex justify-center">
+      <button className="px-6 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-gray-200 transition">
+        learn more
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
     </div>
   );
 };

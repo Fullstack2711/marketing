@@ -54,7 +54,7 @@ function Navbar() {
         className="group relative rounded-full p-px bg-white/10 hover:bg-white/20 transition-all duration-300 overflow-hidden"
       >
         {/* Spinning light effect on hover */}
-        <div className="absolute inset-[-100%] w-[200%] h-[200%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 [mask:linear-gradient(black,transparent)] pointer-events-none">
+        <div className="absolute inset-[-100%] w-[200%] h-[200%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 [mask:linear-gradient(black,transparent)] pointer-events- transition-300">
           <div
             className="absolute inset-0 group-hover:animate-[spin_2s_linear_infinite]"
             style={{

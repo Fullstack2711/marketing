@@ -57,34 +57,42 @@ const ReviewCard = ({ img, name, username, body }) => {
     </div>
   );
 };
-
 export function MarqueeDemo() {
-	const { t } = useLanguage();
-	return (
-		<section className="w-full bg-white py-20 px-6 relative z-20">
-			<div className="max-w-6xl mx-auto">
-				{/* Title */}
-				<h2 className="text-5xl md:text-6xl font-light text-black text-start  mb-16">
-					{t('customers_title')}
-				</h2>
+  const { t } = useLanguage();
+  return (
+    <section className="w-full bg-white py-20 px-6 relative z-20">
+      <div className="max-w-6xl mx-auto">
+        {/* Title */}
+        <h2
+          className="font-medium text-black mb-16 text-start"
+          style={{
+            fontSize: '6vw',
+			    fontSize: 'clamp(40px, 6vw, 110px)',
 
-				
-				{/* Marquee Carousel */}
-				<div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-					<Marquee pauseOnHover className="[--duration:20s]">
-						{firstRow.map((review) => (
-							<ReviewCard key={review.username} {...review} />
-						))}
-					</Marquee>
-					<Marquee reverse pauseOnHover className="[--duration:20s]">
-						{secondRow.map((review) => (
-							<ReviewCard key={review.username} {...review} />
-						))}
-					</Marquee>
-					<div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white"></div>
-					<div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white"></div>
-				</div>
-			</div>
-		</section>
-	);
+            maxWidth: '743px',
+            lineHeight: 1,
+          }}
+        >
+          {t('customers_title')}
+        </h2>
+
+        {/* Marquee Carousel */}
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {firstRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+          <Marquee reverse pauseOnHover className="[--duration:20s]">
+            {secondRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white"></div>
+        </div>
+      </div>
+    </section>
+  );
 }
+

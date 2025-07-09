@@ -6,11 +6,18 @@ import {   Send, Instagram, Youtube } from 'lucide-react';
 
 const SocialIcon = ({ href, icon: Icon }) => (
   <Link href={href} target="_blank" rel="noopener noreferrer">
-    <div className="p-2 bg-gray-800/60 rounded-lg hover:bg-gray-700/80 transition-colors duration-200">
-      <Icon className="w-5 h-5 text-gray-400" />
+    <div className="p-2 bg-gray-800/60 rounded-lg transition-colors duration-200 hover:bg-gray-700/80">
+      <Icon
+        className="w-5 h-5"
+        style={{ color: '#737373' }} // default rang
+        onMouseEnter={e => (e.currentTarget.style.color = '#D9D9D9')} // hover rang
+        onMouseLeave={e => (e.currentTarget.style.color = '#737373')}
+      />
     </div>
   </Link>
 );
+
+
 
 const Footer = () => {
   const { t } = useLanguage();

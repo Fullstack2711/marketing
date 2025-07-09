@@ -201,11 +201,12 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 25%; /* Affects the bottom 25% of the card */
+  height: 25%;
   background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent);
-  backdrop-filter: blur(2px); /* Very soft blur */
-  pointer-events: none; /* Ensures the pseudo-element doesn't interfere with interactions */
+  backdrop-filter: blur(2px);
+  pointer-events: none;
 }
+
 
 @font-face {
           font-family: 'bastardo-grotesk';
@@ -218,6 +219,20 @@
 
 
         @font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bastardo Grotesk';
+  src: url('/fonts/BastardoGrotesk-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'PP Neue Montreal';
   src: url('/fonts/PPNeueMontreal-Regular.woff2') format('woff2');
   font-weight: 400;

@@ -11,6 +11,8 @@ module.exports = {
       },
             fontFamily: {
         montreal: ['"PP Neue Montreal"', 'sans-serif'],
+              bastardo: ['"Bastardo Grotesk"', 'sans-serif'],
+
       },
 
     },
