@@ -9,7 +9,7 @@ const ProfileCard = ({
   image = "/card.jpg"
 }) => {
   return (
-    <div className="relative w-[320px] h-[500px] rounded-3xl overflow-hidden shadow-xl border border-[#facc15]/20 p-px bg-black/10 group">
+    <div className="relative w-[300px] h-[450px] rounded-3xl overflow-hidden shadow-xl border border-[#facc15]/20 p-px bg-black/10 group mx-6 my-4">
       {/* Outer static border with new colors */}
       <div className="absolute inset-0 rounded-3xl [mask:linear-gradient(black,transparent)]">
         <div 
@@ -50,22 +50,19 @@ const ProfileCard = ({
       </div>
 
       {/* Bottom Info: with smoother gradient and no visible blur lines */}
-    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 backdrop-blur-xs">
-  <div className="text-white font-bastardo text-center space-y-2">
-    <h3 className="text-2xl font-bold">Cineframe Khan</h3>
-    <p className="text-sm text-gray-300">
-      A videographer is a professional who captures moving images using a video camera.
-    </p>
-    <div className="flex justify-center">
-      <button className="px-6 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-gray-200 transition">
-        learn more
-      </button>
-    </div>
-  </div>
-</div>
-
-
-
+      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 backdrop-blur-xs">
+        <div className="text-white font-bastardo text-center space-y-2">
+          <h3 className="text-2xl font-bold">{name}</h3>
+          <p className="text-sm text-gray-300">
+            {profession}
+          </p>
+          <div className="flex justify-center">
+            <button className="px-6 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-gray-200 transition">
+              learn more
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
