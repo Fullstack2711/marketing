@@ -19,7 +19,7 @@ const SocialIcon = ({ href, icon: Icon }) => (
 function InfoCompany() {
   const { t } = useLanguage();
   return (
-<section className="w-full h-[100vh] bg-transparent text-gray-300 py-24 px-8 md:px-16 relative z-10">
+<section className="w-full min-h-screen bg-transparent text-gray-300 py-24 px-8 md:px-16 relative z-10 flex flex-col justify-between">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         
         {/* Left Column: Text Content */}
@@ -55,17 +55,19 @@ function InfoCompany() {
           {/* Bu yerga rasm yoki video joylashtiriladi */}
         </div>
       </div>
-        <footer className="w-full  text-gray-400 py-8 px-4 sm:px-6 lg:px-8">
-<div className="max-w-8xl mx-auto flex flex-col sm:flex-row justify-center sm:justify-end items-center gap-15 sm:gap-52">
-        <div className="flex items-center gap-4">
-           <SocialIcon href="#" icon={Send} />
-          <SocialIcon href="#" icon={Instagram} />
-          <SocialIcon href="#" icon={Youtube} />
-          <SocialIcon href="#" icon={Linkedin} />
+      <footer className="w-full text-gray-400 pt-16 pb-8">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-400 font-bold order-2 sm:order-1">
+            {t('footer_powered_by', 'The site is powered by Result')}
+          </p>
+          <div className="flex items-center gap-4 order-1 sm:order-2">
+            <SocialIcon href="#" icon={Send} />
+            <SocialIcon href="#" icon={Instagram} />
+            <SocialIcon href="#" icon={Youtube} />
+            <SocialIcon href="#" icon={Linkedin} />
+          </div>
         </div>
-        <p className="text-sm text-gray-400 font-bold">{t('footer_powered_by', 'The site is powered by Result')}</p>
-      </div>
-    </footer>
+      </footer>
     </section>
   );
 }
