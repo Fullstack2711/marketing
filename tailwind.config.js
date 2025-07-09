@@ -9,6 +9,10 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 6s linear infinite',
       },
+            fontFamily: {
+        montreal: ['"PP Neue Montreal"', 'sans-serif'],
+      },
+
     },
   },
   plugins: [],

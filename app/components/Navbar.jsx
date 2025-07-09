@@ -63,34 +63,41 @@ background: 'conic-gradient(from 90deg at 50% 50%, #ffffffaa, #ffffff 50%, #ffff
           />
         </div>
         
-        <div className="relative flex items-center gap-6 px-6 py-2 bg-black/70 backdrop-blur-xl rounded-full">
-          <Link
-            href="/jamoa"
-            className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
-          >
-            {t("nav_team")}
-          </Link>
-          <Link
-            href="/portfolio"
-            className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
-          >
-            {t("nav_portfolio")}
-          </Link>
-          <Link
-            href="/xizmatlar"
-            className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
-          >
-            {t("nav_services")}
-          </Link>
-          <button
-            onClick={handleOpenModal}
-            className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
-          >
-            {t("nav_contact")}
-          </button>
-        </div>
+      <div className="relative flex items-center gap-8 px-8 py-2 rounded-full bg-gray-600/15 backdrop-blur-xl shadow-lg border border-white/10 font-montreal"
+        style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
+>
+  {/* Shine effect */}
+  <div className="absolute top-0 left-1/2 w-12 h-full bg-white/20 rounded-full blur-md transform -translate-x-1/2 pointer-events-none"></div>
+
+  <Link
+    href="/jamoa"
+    className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+  >
+    {t("nav_team")}
+  </Link>
+  <Link
+    href="/portfolio"
+    className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+  >
+    {t("nav_portfolio")}
+  </Link>
+  <Link
+    href="/xizmatlar"
+    className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+  >
+    {t("nav_services")}
+  </Link>
+  <button
+    onClick={handleOpenModal}
+    className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+  >
+    {t("nav_contact")}
+  </button>
+</div>
+
+
       </div>
-    </div>
+    </div>    
 
 
 
@@ -104,11 +111,12 @@ background: 'conic-gradient(from 90deg at 50% 50%, #ffffffaa, #ffffff 50%, #ffff
               +998 95 419 33 33
             </a>
            <button
-              onClick={handleOpenModal}
-              className="px-4 py-1.5 text-white bg-transparent backdrop-blur-md border border-white/40 rounded-full hover:bg-white/10 hover:border-white/60 text-sm transition-all duration-200"
-            >
-              {t('nav_contact')}
-            </button>
+  onClick={handleOpenModal}
+  className="px-4 py-1.5 text-white bg-white/10 backdrop-blur-md border border-white/40 rounded-full hover:border-white/60 text-sm transition-all duration-200"
+>
+  {t('nav_contact')}
+</button>
+
 
           </div>
 

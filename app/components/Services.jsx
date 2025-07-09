@@ -31,7 +31,7 @@ function Services() {
       <div className="w-full max-w-6xl mx-auto text-start px-8">
         
         {/* Sarlavha */}
-        <h2 className="text-5xl font-light mb-12 text-white">
+        <h2 className=" title text-5xl font-light mb-12 text-white">
           {t('services_title')}
         </h2>
 

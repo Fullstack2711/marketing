@@ -178,3 +178,48 @@
 .animate-spin-around {
   animation: spin-around 2.5s linear infinite;
 }
+
+
+.title{
+    @font-face {
+    font-family: 'Stick Sans Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Stick Sans Regular'), url('StickSans.woff') format('woff');
+    }
+}
+
+
+.bottom-blur {
+  position: relative;
+  overflow: hidden;
+}
+
+.bottom-blur::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%; /* Affects the bottom 25% of the card */
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent);
+  backdrop-filter: blur(2px); /* Very soft blur */
+  pointer-events: none; /* Ensures the pseudo-element doesn't interfere with interactions */
+}
+
+@font-face {
+          font-family: 'bastardo-grotesk';
+          src: url('/fonts/bastardo-grotesk-regular.ttf') format('truetype');
+          /* Agar boshqa vaznlar bo'lsa, ularni ham qo'shish mumkin */
+        }
+        .font-bastardo-grotesk {
+          font-family: 'bastardo-grotesk', sans-serif;
+        }
+
+
+        @font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}

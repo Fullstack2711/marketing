@@ -3,13 +3,14 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
+ 
 
 const AnimatedBorderButton = ({ href, label }) => {
   return (
     <Link href={href}>
-      <div className="group relative inline-block rounded-full p-[1px] bg-gradient-to-r from-[#F1946F]/20 via-white/10 to-[#B9D9FE]/20 hover:from-[#F1946F]/40 hover:to-[#B9D9FE]/40 transition-all duration-300 overflow-hidden">
+      <div className="group relative inline-block rounded-full p-[2px] bg-gradient-to-r from-[#F1946F]/50 via-white/30 to-[#B9D9FE]/50 hover:from-[#F1946F]/70 hover:to-[#B9D9FE]/70 transition-all duration-300 overflow-hidden">
         
-        {/* Spinning light effect on hover */}
+        {/* Spinning light effect only on hover */}
         <div className="absolute inset-[-100%] w-[200%] h-[200%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 [mask:linear-gradient(black,transparent)] pointer-events-none">
           <div
             className="absolute inset-0 group-hover:animate-[spin_2s_linear_infinite]"
@@ -26,16 +27,15 @@ const AnimatedBorderButton = ({ href, label }) => {
     </Link>
   );
 };
-
 const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8 pb-50">
+    <div className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8 pb-45       ">
       {/* Main Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         {/* Logo */}
-        <div className="flex justify-center mb-6 sm:pb-15">
+        <div className="flex justify-center mb-6 sm:pb-20">
           <Image
             src="/Logo.png"
             alt="Result Logo"

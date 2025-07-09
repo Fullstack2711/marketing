@@ -46,7 +46,7 @@ export default function Home() {
             </div>
 
             {/* SVG chiziqli animatsiya */}
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full max-w-5xl pointer-events-none z-10">
+            <div className="absolute -top-15 left-1/2 -translate-x-1/2 w-full max-w-5xl pointer-events-none z-10">
               <Image
                 src="/Lineanimation.svg"
                 alt="Decorative lines"
@@ -61,7 +61,7 @@ export default function Home() {
             <div className="relative z-20">
               <Hero/>
             </div>
-            <div className="relative z-30 mt-[-16rem]">
+            <div className="relative z-30 mt-[-14rem] mb-14">
               <ProfileCarousel />
             </div>
           </div>
