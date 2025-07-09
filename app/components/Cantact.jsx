@@ -16,7 +16,7 @@ const OrderForm = () => {
         </div>
 
         {/* Right Side Form */}
-        <div className="backdrop-blur-lg rounded-3xl p-8 border border-amber-300/20 z-10 relative bg-[#FFFFFF33]">
+        <div className="backdrop-blur-lg rounded-3xl p-8 border border-[#F09470] z-10 relative bg-[#FFFFFF33]">
   <h2 className="text-2xl font-light mb-6 text-center text-white">{t('order_form_subtitle')}</h2>
   <form className="space-y-6">
     <div>
@@ -24,7 +24,7 @@ const OrderForm = () => {
       <input
         id="name"
         type="text"
-        className="w-full p-3 bg-black/20 rounded-xl border border-white/10 focus:border-amber-300/50 focus:ring-0 outline-none transition-colors"
+        className="w-full p-3 bg-black/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors"
         placeholder={t('order_form_name_label')}
       />
     </div>
@@ -33,7 +33,7 @@ const OrderForm = () => {
       <input
         id="contact"
         type="text"
-        className="w-full p-3 bg-black/20 rounded-xl border border-white/10 focus:border-amber-300/50 focus:ring-0 outline-none transition-colors"
+        className="w-full p-3 bg-black/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors"
         placeholder={t('order_form_contact_label')}
       />
     </div>
@@ -42,13 +42,13 @@ const OrderForm = () => {
       <textarea
         id="message"
         rows="4"
-        className="w-full p-3 bg-black/20 rounded-xl border border-white/10 focus:border-amber-300/50 focus:ring-0 outline-none transition-colors resize-none"
+        className="w-full p-3 bg-black/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors resize-none"
         placeholder={t('order_form_message_label')}
       ></textarea>
     </div>
     <button
       type="submit"
-      className="w-full p-3 bg-white/10 rounded-xl border border-white/10 hover:bg-white/20 transition-colors"
+      className="w-full p-3 bg-white/10 rounded-xl border-[#F09470] hover:bg-white/20 transition-colors"
     >
       {t('order_form_submit_button')}
     </button>
