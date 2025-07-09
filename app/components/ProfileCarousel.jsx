@@ -47,15 +47,19 @@ const ProfileCarousel = () => {
     if (diff < -total / 2) position = diff + total;
     
     let translateX;
+    let scale;
+
     if (position === 0) {
       translateX = 0;
+      scale = 1.1;
     } else if (Math.abs(position) === 1) {
-      translateX = position * 330; // Markazga yaqin kartalar masofasi
+      translateX = position * 360; // Markazga yaqin kartalar masofasi
+      scale = 1 - Math.abs(position) * 0.2;
     } else { // position 2 va -2 uchun
-      translateX = position * 290; // Chekkadagi kartalar masofasi
+      translateX = position * 300; // Chekkadagi kartalar masofasini qisqartirish
+      scale = 1 - Math.abs(position) * 0.25; // Chekkadagi kartalarni kichraytirish
     }
 
-    const scale = position === 0 ? 1.1 : 1 - Math.abs(position) * 0.2;
     const rotateY = position * 15;
     const opacity = Math.abs(position) > 1 ? 0.7 : 1; // Chekkadagi kartalarni ham ko'rsatish
     
