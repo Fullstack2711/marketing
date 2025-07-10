@@ -61,7 +61,7 @@ export function MarqueeDemo() {
   const { t } = useLanguage();
   return (
     <section className="w-full bg-white py-20 px-6 relative z-20">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2
           className="font-medium text-black mb-16 text-start"
