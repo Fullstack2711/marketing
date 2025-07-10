@@ -23,7 +23,7 @@ const Hero = () => {
         {/* Main Content Container */}
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           {/* Logo */}
-          <div className="flex justify-center mb-6 sm:pb-20">
+          <div className="flex justify-center mb-6 sm:pb-10">
             <Image
               src="/Logo.png"
               alt="Result Logo"
@@ -42,7 +42,7 @@ const Hero = () => {
               </div>
 
               {/* Main Title */}
-              <div className="flex-1 mx-8 xl:mx-12">
+              <div className="flex-1 mx-8 xl:mx-12 h-56 flex items-center justify-center">
                 <h1 className="text-5xl xl:text-6xl 2xl:text-7xl font-light tracking-wide leading-none">
                   {t('hero_title_line1')}
                   <br />
@@ -60,7 +60,7 @@ const Hero = () => {
           {/* Mobile and Tablet Layout (below lg) */}
           <div className="block lg:hidden">
             {/* Main Title */}
-            <div className="mb-8 sm:mb-10">
+            <div className="mb-8 sm:mb-10 h-40 flex items-center justify-center">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-wide leading-none px-2">
                 {t('hero_title_line1')}
                 <br />

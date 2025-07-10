@@ -67,7 +67,7 @@ export default function Home() {
             <div className="relative z-20">
               <Hero/>
             </div>
-<div className="w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-75">
+            <div className="w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-75">
               <ProfileCarousel />
             </div>
           </div>
@@ -98,3 +98,4 @@ export default function Home() {
     </>
   );
 }
+  
