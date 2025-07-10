@@ -16,16 +16,6 @@
   initial-value: 180deg;
 }
 
-  
-:root {
-  --border-color-1: rgba(183, 217, 254, 0.2); /* #B7D9FE33 20% shaffoflik */
-  --border-color-2: rgb(240, 148, 112); /* #F09470 */
-  --background: #1A1A1A;
-  --foreground: #D1D5DB;
-  --border-size: 1px;
-  --border-radius: 2em;
-}
-  
 @keyframes rotateBackground {
   to { --border-angle-1: 360deg; }
 }
@@ -44,6 +34,13 @@
 }
 
 .fancyButton {
+  --border-color-1: rgba(183, 217, 254, 0.2); /* #B7D9FE33 20% shaffoflik */
+  --border-color-2: rgb(240, 148, 112); /* #F09470 */
+  --background: #1A1A1A;
+  --foreground: #D1D5DB;
+  --border-size: 1px;
+  --border-radius: 2em;
+
   --border-angle-1: 0deg;
   --border-angle-2: 90deg;
   --border-angle-3: 180deg;

@@ -1,0 +1,45 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@keyframes rotateGradient {
+  to { --angle: 360deg; }
+}
+
+.navContainer {
+  --border-color-1: rgba(145, 145, 145, 0.3);
+  --border-color-2: rgb(218, 217, 217);
+  --background: #8f8f8fcf;
+  --foreground: #D1D5DB;
+  --border-size: 1px;
+  --border-radius: 1.5rem;
+
+  position: relative;
+  padding: var(--border-size);
+  border-radius: var(--border-radius);
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+    conic-gradient(from var(--angle), var(--border-color-1), var(--border-color-2), var(--border-color-1)) border-box;
+  border: var(--border-size) solid transparent;
+  animation: rotateGradient 3s linear infinite;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navContainer:hover {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+.innerNav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.5rem 2rem;
+  border-radius: calc(var(--border-radius) - var(--border-size));
+  background: var(--background);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "PP Neue Montreal", sans-serif;
+}
+ 
