@@ -1,9 +1,8 @@
- "use client";
+"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Modal from "./Modal";
 import { useLanguage } from "../context/LanguageContext";
-import nav from "../Navbar.module.css";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,8 +49,8 @@ function Navbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex justify-center flex-grow">
-            <div className={nav.navContainer}>
-              <div className={nav.innerNav}>
+            <div className="navContainer">
+              <div className="innerNav">
                 <Link
                   href="/jamoa"
                   className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
@@ -155,6 +154,61 @@ function Navbar() {
         )}
       </header>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <style jsx>{`
+        @property --angle {
+          syntax: "<angle>";
+          inherits: true;
+          initial-value: 0deg;
+        }
+
+        @keyframes rotateGradient {
+          to {
+            --angle: 360deg;
+          }
+        }
+
+        .navContainer {
+          --border-color-1: rgba(145, 145, 145, 0.3);
+          --border-color-2: rgb(218, 217, 217);
+          --background: #8f8f8fa8;
+          --foreground: #d1d5db00;
+          --border-size: 1px;
+          --border-radius: 1.5rem;
+
+          position: relative;
+          padding: var(--border-size);
+          border-radius: var(--border-radius);
+          background: linear-gradient(var(--background), var(--background))
+              padding-box,
+            conic-gradient(
+                from var(--angle),
+                var(--border-color-1),
+                var(--border-color-2),
+                var(--border-color-1)
+              )
+              border-box;
+          border: var(--border-size) solid transparent;
+          animation: rotateGradient 3s linear infinite;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .navContainer:hover {
+          transform: scale(1.02);
+          opacity: 1;
+        }
+
+        .innerNav {
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+          padding: 0.5rem 2rem;
+          border-radius: calc(var(--border-radius) - var(--border-size));
+          background: var(--background);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          font-family: "PP Neue Montreal", sans-serif;
+        }
+      `}</style>
     </>
   );
 }

@@ -1,25 +1,19 @@
 "use client";
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import {   Send, Instagram, Youtube, Linkedin } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
-const SocialIcon = ({ href, icon: Icon }) => (
-  <Link href={href} target="_blank" rel="noopener noreferrer">
-    <div className="p-2 bg-gray-400  rounded-lg transition-colors duration-200 hover:bg-gray-700/80">
-      <Icon
-        className="w-5 h-5"
-        style={{ color: '#737373' }} // default rang
-        onMouseEnter={e => (e.currentTarget.style.color = '#D9D9D9')} // hover rang
-        onMouseLeave={e => (e.currentTarget.style.color = '#737373')}
-      />
-    </div>
+const SocialIcon = ({ href, src, alt }) => (
+  <Link href={href} target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+    <Image src={src} alt={alt} width={25} height={25} className="w-8 h-8 sm:w-8 sm:h-9" />
   </Link>
 );
+
 function InfoCompany() {
   const { t } = useLanguage();
   return (
-<section className="w-full h-[110vh] bg-transparent text-gray-300 py-24 px-8 md:px-16 relative z-10 flex flex-col justify-between">
+<section className="w-full h-[100vh] bg-transparent text-gray-300 py-24 px-8 md:px-16 relative z-10 flex flex-col justify-between">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         
         {/* Left Column: Text Content */}
@@ -56,18 +50,20 @@ function InfoCompany() {
         </div>
       </div>
       <footer className="w-full text-gray-400 pt-16 pb-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center sm:justify-end items-center gap-45">
-          <div className="flex items-center gap-4">
-            <SocialIcon href="#" icon={Send} />
-            <SocialIcon href="#" icon={Instagram} />
-            <SocialIcon href="#" icon={Youtube} />
-            <SocialIcon href="#" icon={Linkedin} />
-          </div>
-          <p className="text-sm text-gray-400 font-bold">
-            {t('footer_powered_by', 'The site is powered by Result')}
-          </p>
-        </div>
-      </footer>
+  <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-end items-center gap-43">
+    <div className="flex items-center gap-4">
+      <SocialIcon href="#" src="/BE_Logo.svg" alt="Behance" />
+      <SocialIcon href="#" src="/Telegram_Logo.svg" alt="Telegram" />
+      <SocialIcon href="#" src="/Instagram_Logo.svg" alt="Instagram" />
+      <SocialIcon href="#" src="/YoutTube_Logo.svg" alt="YouTube" />
+    </div>
+  <p
+      className="text-xl  font-light ml-6 "
+        >
+      {t("footer_powered_by", "The site is powered by Result")}
+    </p>
+  </div>
+</footer>
     </section>
   );
 }

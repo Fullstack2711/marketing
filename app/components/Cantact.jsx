@@ -107,7 +107,7 @@ const OrderForm = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="w-full p-3 bg-black/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors"
+                className="w-full p-3 bg-gray/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors"
                 placeholder={t('order_form_name_label')}
               />
             </div>
@@ -120,7 +120,7 @@ const OrderForm = () => {
                 value={formData.contact}
                 onChange={handleInputChange}
                 required
-                className="w-full p-3 bg-black/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors"
+                className="w-full p-3 bg-gray/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors"
                 placeholder={t('order_form_contact_label')}
               />
             </div>
@@ -133,7 +133,7 @@ const OrderForm = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 required
-                className="w-full p-3 bg-black/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors resize-none"
+                className="w-full p-3 bg-gray/40 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors resize-none"
                 placeholder={t('order_form_message_label')}
               ></textarea>
             </div>
