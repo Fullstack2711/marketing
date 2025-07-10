@@ -3,31 +3,20 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
- 
+ import styles from '../AnimatedBorderButton.module.css'
 
+ 
 const AnimatedBorderButton = ({ href, label }) => {
   return (
-    <Link href={href}>
-      <div className="group relative inline-block rounded-full p-[2px] bg-gradient-to-r from-[#F1946F]/50 via-white/30 to-[#B9D9FE]/50 hover:from-[#F1946F]/70 hover:to-[#B9D9FE]/70 transition-all duration-300 overflow-hidden">
-        
-        {/* Spinning light effect only on hover */}
-        <div className="absolute inset-[-100%] w-[200%] h-[200%] opacity-0 group-hover:opacity-100 transition-opacity duration-500 [mask:linear-gradient(black,transparent)] pointer-events-none">
-          <div
-            className="absolute inset-0 group-hover:animate-[spin_2s_linear_infinite]"
-            style={{
-              background: 'conic-gradient(from 90deg at 50% 50%, #B9D9FE, #F1946F 50%, #B9D9FE 100%)',
-            }}
-          />
-        </div>
-
-        <div className="relative z-10 px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-3 bg-[#1A1A1A] rounded-full text-gray-300 group-hover:text-white text-xs sm:text-sm font-light tracking-wide transition-colors duration-300 whitespace-nowrap">
-          {label}
-        </div>
-      </div>
+    <Link href={href} className={styles.link}>
+      <button className={styles.fancyButton}>
+        <div className={styles.innerDiv}>{label}</div>
+      </button>
     </Link>
   );
 };
-const Hero = () => {
+
+ const Hero = () => {
   const { t } = useLanguage();
 
   return (
