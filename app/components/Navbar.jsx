@@ -30,7 +30,7 @@ function Navbar() {
 
   return (
     <>
-      <header className="w-full text-white fixed top-0 left-0 z-50">
+      <header className="w-full text-white absolute top-0 left-0 z-50">
         <nav className="container mx-auto flex justify-between items-center px-6 py-4 relative z-10">
          <div className="flex-1 flex justify-start items-center gap-2 text-sm">
           <button 

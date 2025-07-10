@@ -31,7 +31,7 @@ const SecondLoader = () => {
           }
         }
         .animate-scale-in {
-          animation: scale-in 3s ease-in-out forwards;
+          animation: scale-in 1s ease-in-out forwards;
           transform-origin: center;
         }
       `}</style>

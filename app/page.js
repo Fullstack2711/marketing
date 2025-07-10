@@ -21,7 +21,7 @@ export default function Home() {
       return () => clearTimeout(timer);
     }
     if (loadingState === 'navbar') {
-      const timer = setTimeout(() => setLoadingState('finished'), 3000); // 3s for navbar animation
+      const timer = setTimeout(() => setLoadingState('finished'), 1500); // 1.5s for navbar animation
       return () => clearTimeout(timer);
     }
   }, [loadingState]);
@@ -32,8 +32,7 @@ export default function Home() {
       {loadingState === 'navbar' && <SecondLoader />}
 
       <div className={loadingState === 'video' ? 'hidden' : 'block'}>
-        {/* Fon rasmi - radial gradient */}
-        <div
+         <div
           className="fixed inset-0 z-0"
           style={{
             background: `radial-gradient(circle at top left, rgba(75, 22, 76, 0.2), transparent 60%),
@@ -43,13 +42,13 @@ export default function Home() {
           }}
         />
         
-        {/* Navbar is always visible after video loader */}
-        <div className={`fixed top-0 left-0 w-full z-50 cursor-pointer ${loadingState !== 'finished' ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`}>
-          <Navbar />
-        </div>
-
         {/* Main content wrapper with opacity transition */}
         <div className={`relative z-10 ${loadingState === 'finished' ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'}`}>
+          {/* Navbar is now part of the page flow */}
+          <div className={`w-full z-50 cursor-pointer ${loadingState !== 'finished' ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`}>
+            <Navbar />
+          </div>
+
           {/* HEADER qismi */}
           <div className="header min-h-screen relative overflow-hidden ">
             {/* SVG chiziqli animatsiya */}
