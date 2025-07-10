@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 
 const AnimatedBorderButton = ({ href, label }) => {
@@ -19,20 +18,9 @@ const Hero = () => {
 
   return (
     <>
-      <div className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8 pb-45       ">
+      <div className="relative min-h-screen flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8 pb-15       ">
         {/* Main Content Container */}
         <div className="relative z-10 max-w-7xl mx-auto w-full">
-          {/* Logo */}
-          <div className="flex justify-center mb-6 sm:pb-10">
-            <Image
-              src="/Logo.png"
-              alt="Result Logo"
-              width={150}
-              height={70}
-              className="opacity-90 w-20 h-10 sm:w-24 sm:h-12 md:w-28 md:h-14 lg:w-32 lg:h-16"
-            />
-          </div>
-
           {/* Desktop Layout (lg and up) */}
           <div className="hidden lg:block">
             <div className="relative flex items-center justify-between mb-12">
@@ -186,5 +174,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
-
+export default Hero; 
