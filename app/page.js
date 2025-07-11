@@ -11,6 +11,7 @@ import OrderForm from "./components/Cantact";
  import InfoCompany from "./components/InfoCompany";
 import Loader from "./components/Loader";
 import SecondLoader from "./components/SecondLoader.jsx";
+import Footer from "./components/Footer";
  
 export default function Home() {
   const [loadingState, setLoadingState] = useState('video'); // 'video', 'navbar', 'finished'
@@ -92,6 +93,7 @@ export default function Home() {
 
           <div className="info">
             <InfoCompany />
+            <Footer  />
            </div>
         </div>
       </div>
