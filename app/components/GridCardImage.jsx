@@ -48,15 +48,21 @@ const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({ img, name, username, body }) => {
   return (
-    <div className="w-72 h-48 relative overflow-hidden rounded-xl shadow-md border border-gray-800 bg-black">
+    <div className="w-72 h-48 relative overflow-hidden rounded-xl shadow-md border border-gray-800 bg-black cursor-pointer">
       <img
         src={img}
         alt="Review image"
         className="w-full h-full object-cover opacity-60"
       />
+      <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
+        {/* <p className="text-sm font-semibold">{name}</p>
+        <p className="text-xs text-gray-300">{username}</p> */}
+        {/* <p className="text-sm mt-2">{body}</p> */}
+      </div>
     </div>
   );
 };
+
 export function MarqueeDemo() {
   const { t } = useLanguage();
   return (
@@ -66,7 +72,6 @@ export function MarqueeDemo() {
         <h2
           className="font-medium text-black mb-16 text-start"
           style={{
-            fontSize: '6vw',
             fontSize: 'clamp(40px, 6vw, 110px)',
             maxWidth: '743px',
             lineHeight: 1,
@@ -76,13 +81,16 @@ export function MarqueeDemo() {
         </h2>
 
         {/* Marquee Carousel */}
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <Marquee pauseOnHover className="[--duration:20s]">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden space-y-8">
+          {/* Birinchi qator - chapdan o‘ngga */}
+          <Marquee reverse pauseOnHover className="[--duration:20s]">
             {firstRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}
           </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:20s]">
+
+          {/* Ikkinchi qator - ongdan chapga */}
+          <Marquee pauseOnHover className="[--duration:20s]">
             {secondRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}

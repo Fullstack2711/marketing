@@ -7,13 +7,13 @@ const ProfileCarousel = () => {
   const intervalRef = useRef(null);
 
   const profiles = [
-    { id: 1, image: "/card.jpg" },
-    { id: 2, image: "/card.jpg" },
-    { id: 3, image: "/card.jpg" },
-    { id: 4, image: "/card.jpg" },
-    { id: 5, image: "/card.jpg" },
-    { id: 6, image: "/card.jpg" },
-    { id: 7, image: "/card.jpg" },
+    { id: 1, image: "/img1.jpg", name:'Shohijaxon.J', info :'Result asoschisi. Marketolog 7 yil tajriba.Shaxsiy brend Prodyuser.' },
+    { id: 2, image: "/img2.jpg", name:'Sirojiddin. Kh', info:'Marketolog 2 yil tajriba.Loyiha boshqaruvchi.' },
+    { id: 3, image: "/img3.jpg" , name:'Ismailov. I', info:'Grafik Dizayner 3.5 yil tajriba.Vizual uchun javobgar shaxs.' },
+    { id: 4, image: "/tg.jpg"   , name:'Shohrux. T', info:'Project manager.Shaxsiy brend Prodyuseri.' },
+    { id: 5, image: "/img5.jpg" , name:'Хudoyor. lv', info:'Montajor 1 yil tajriba.Aeleoon.' },
+    { id: 6, image: "/tg.jpg"   , name:'Shohrux. T', info:'Project manager.Shaxsiy brend Prodyuseri.' },
+    { id: 7, image: "/imgg.png" , name:'Umid. Kh', info:'Videograf 1 yil tajriba.Streamer.' },
   ];
 
   const startAutoplay = () => {
@@ -82,7 +82,7 @@ const ProfileCarousel = () => {
             style={getTransform(index)}
             onClick={() => handleCardClick(index)}
           >
-            <ProfileCard image={profile.image} />
+            <ProfileCard image={profile.image} name ={profile.name} info ={profile.info}/>
           </div>
         ))}
       </div>

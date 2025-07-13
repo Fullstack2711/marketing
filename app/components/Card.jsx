@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const ProfileCard = ({ 
   name = "Cineframe Khan", 
-  profession = "A videographer is a professional who captures moving images using a video camera.", 
+  info = "A videographer is a professional who captures moving images using a video camera.", 
   image = "/card.jpg"
 }) => {
   return (
@@ -44,23 +44,16 @@ const ProfileCard = ({
         <div className="absolute top-[25%] left-0 w-full h-[50%] bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
       </div>
 
-      {/* Top left badge */}
-      <div className="absolute top-3 left-3 bg-white text-black text-xs font-semibold px-3 py-1 rounded-full shadow">
-        professional khan
-      </div>
+     
 
       {/* Bottom Info: with smoother gradient and no visible blur lines */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 backdrop-blur-xs">
-        <div className="text-white font-bastardo text-center space-y-2">
-          <h3 className="text-2xl font-bold">{name}</h3>
+      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 font-thin  ">
+        <div className="text-white font-bastardo text-center space-y-2 pb-8">
+          <h3 className="text-2xl font-light">{name}</h3>
           <p className="text-sm text-gray-300">
-            {profession}
+            {info}
           </p>
-          <div className="flex justify-center">
-            <button className="px-6 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-gray-200 transition">
-              learn more
-            </button>
-          </div>
+           
         </div>
       </div>
     </div>
