@@ -1,18 +1,69 @@
 "use client";
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 // Xizmat tugmasi komponenti
-const ServiceButton = ({ children }) => (
-  <div className="buttonContainer">
+const ServiceButton = React.forwardRef(({ children, onMouseEnter, onMouseLeave }, ref) => (
+  <div
+    className="buttonContainer"
+    ref={ref}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+  >
     <div className="innerContent">
       {children}
     </div>
   </div>
+));
+
+// MarqueeWrapper faqat mobil uchun
+const MarqueeWrapper = ({ children, isPaused, onMouseEnter, onMouseLeave, onTouchStart, onTouchEnd }) => (
+  <div
+    className="marquee-mobile"
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+    onTouchStart={onTouchStart}
+    onTouchEnd={onTouchEnd}
+    style={{
+      animationPlayState: isPaused ? 'paused' : 'running',
+    }}
+  >
+    <div className="marquee-track">{children}{children}</div>
+  </div>
 );
 
- function Services() {
+function Services() {
   const { t } = useLanguage();
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const buttonRefs = [useRef(null), useRef(null), useRef(null)];
+  const [glowStyle, setGlowStyle] = useState({ left: '50%', width: '80px', opacity: 0 });
+  const [isMarqueePaused, setIsMarqueePaused] = useState(false);
+
+  const handleMouseEnter = (idx) => {
+    setHoveredIndex(idx);
+    const ref = buttonRefs[idx].current;
+    if (ref) {
+      const rect = ref.getBoundingClientRect();
+      const parentRect = ref.parentNode.getBoundingClientRect();
+      const left = rect.left - parentRect.left + rect.width / 2;
+      setGlowStyle({
+        left: `${left}px`,
+        width: `${rect.width * 0.6}px`,
+        opacity: 1,
+        transition: 'left 0.3s cubic-bezier(.4,2,.6,1), width 0.3s cubic-bezier(.4,2,.6,1), opacity 0.2s',
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+    setGlowStyle({ ...glowStyle, opacity: 0 });
+  };
+
+  // Marquee pause uchun eventlar
+  const handleMarqueePause = () => setIsMarqueePaused(true);
+  const handleMarqueeResume = () => setIsMarqueePaused(false);
+
   return (
     <>
       <section className="w-full bg-transparent py-24 flex flex-col items-center justify-center text-white relative z-10">
@@ -23,16 +74,74 @@ const ServiceButton = ({ children }) => (
             {t('services_title')}
           </h2>
 
-          {/* Xizmat tugmalari */}
-          <div className="flex flex-wrap items-center justify-center gap-8 mb-16 w-full">
-            <ServiceButton>{t('services_button_personal_brand')}</ServiceButton>
-            <ServiceButton>{t('services_button_digital_marketing')}</ServiceButton>
-            <ServiceButton>{t('services_button_branding')}</ServiceButton>
+          {/* Desktop: oddiy flex, Mobil: marquee */}
+          <div className="hidden sm:flex flex-wrap items-center justify-center gap-8 mb-16 w-full">
+            <ServiceButton
+              ref={buttonRefs[0]}
+              onMouseEnter={() => handleMouseEnter(0)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {t('services_button_personal_brand')}
+            </ServiceButton>
+            <ServiceButton
+              ref={buttonRefs[1]}
+              onMouseEnter={() => handleMouseEnter(1)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {t('services_button_digital_marketing')}
+            </ServiceButton>
+            <ServiceButton
+              ref={buttonRefs[2]}
+              onMouseEnter={() => handleMouseEnter(2)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {t('services_button_branding')}
+            </ServiceButton>
+          </div>
+
+          {/* Mobil: marquee */}
+          <div className="sm:hidden mb-16 w-full overflow-x-hidden">
+            <MarqueeWrapper
+              isPaused={isMarqueePaused}
+              onMouseEnter={handleMarqueePause}
+              onMouseLeave={handleMarqueeResume}
+              onTouchStart={handleMarqueePause}
+              onTouchEnd={handleMarqueeResume}
+            >
+              <ServiceButton>{t('services_button_personal_brand')}</ServiceButton>
+              <ServiceButton>{t('services_button_digital_marketing')}</ServiceButton>
+              <ServiceButton>{t('services_button_branding')}</ServiceButton>
+            </MarqueeWrapper>
           </div>
 
           {/* Chiziq — porlash bilan */}
-          <div className="relative w-full h-px bg-white/20">
-            <div className="absolute left-1/2 top-0 h-px w-20 -translate-x-1/2 bg-gradient-to-r from-transparent via-white to-transparent" />
+          <div className="relative w-full" style={{ minHeight: '8px' }}>
+            {/* Asosiy xira chiziq: juda ingichka */}
+            <div
+              className="absolute top-1/2 left-0 w-full pointer-events-none"
+              style={{
+                height: '1px',
+                background: 'linear-gradient(90deg, transparent 0%, #fff6 50%, transparent 100%)',
+                zIndex: 1,
+                transform: 'translateY(-50%)',
+              }}
+            />
+            {/* Porlash (glow) chizig'i: juda kichik va diffuz */}
+            <div
+              className="absolute top-1/2 pointer-events-none"
+              style={{
+                left: glowStyle.left,
+                width: '40px',
+                height: '3px',
+                opacity: glowStyle.opacity,
+                transform: 'translate(-50%, -50%)',
+                background: 'linear-gradient(90deg, transparent 0%, #fff 45%, #fff 55%, transparent 100%)',
+                filter: 'blur(1px)',
+                borderRadius: '4px',
+                transition: 'left 0.7s cubic-bezier(.4,2,.6,1), opacity 0.3s',
+                zIndex: 2,
+              }}
+            />
           </div>
         </div>
       </section>
@@ -58,7 +167,9 @@ const ServiceButton = ({ children }) => (
           --border-size: 2px;
           --border-radius: 1rem;
 
+
           position: relative;
+          cursor:pointer;
           min-width: 260px;
           flex-basis: 320px;
           flex-grow: 1;
@@ -97,6 +208,28 @@ const ServiceButton = ({ children }) => (
         :global(.buttonContainer:hover .innerContent) {
           background: rgba(12, 11, 16, 1);
           color: white;
+        }
+
+        /* Marquee mobil uchun */
+        @media (max-width: 640px) {
+          .marquee-mobile {
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+            height: 70px;
+            user-select: none;
+          }
+          .marquee-track {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            animation: marquee-move 12s linear infinite;
+            will-change: transform;
+          }
+        }
+        @keyframes marquee-move {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
       `}</style>
     </>
