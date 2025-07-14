@@ -70,7 +70,7 @@ export function MarqueeDemo() {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2
-          className="font-medium text-black mb-16 text-start"
+          className="marque   font-medium text-black mb-16 text-start"
           style={{
             fontSize: 'clamp(40px, 6vw, 110px)',
             maxWidth: '743px',

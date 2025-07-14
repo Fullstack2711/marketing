@@ -59,9 +59,10 @@ export default function Home() {
                 alt="Decorative lines"
                 width={945}
                 height={250}
-                className="mobile-line-animation    m-auto "
+                className="mobile-line-animation    m-auto  "
                 priority
                 id="decorative-lines"
+
               />
             </div>
 
@@ -69,14 +70,14 @@ export default function Home() {
             <div className="hero-section     relative z-20">
               <Hero  />
             </div>
-            <div className="w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-75">
+            <div className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-75">
               <ProfileCarousel />
             </div>
  
           </div>
 
           {/* CONTENT qismi */}
-          <div className="bg-[#111111]">
+          <div className="marquee      bg-[#111111]">
             <MarqueeDemo />
           </div>
           <div className="services">

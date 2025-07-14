@@ -287,8 +287,15 @@
 /* globals.css */
  .hero-section{
   position: relative;
-  bottom: 60px;
- }
+   
+  }
+
+ /* .mobile-line-animation {
+  transform: scale(1.1);  
+   width: 900px;  
+   height: 550px;
+   margin-top: -120px;
+   } */
 
 /* Mobil ekranlar uchun (640px dan kichik) */
 @media (max-width: 640px) {
@@ -297,6 +304,15 @@
      width: 2500px; /* Desktopdagi kabi katta o‘lcham */
     margin-top: 35px; /* Vertikal joylashuvni sozlash */
    }
+    .hero-section{
+  position: relative;
+  bottom: 90px;
+ }
+ .profile-corusel{
+  position: relative;
+  bottom: 90px;
+ }
+ 
 }
 
  
