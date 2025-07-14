@@ -57,7 +57,7 @@ const Hero = () => {
             </div>
 
             {/* Mobile Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10">
+            <div className="flex flex-row sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10">
               <AnimatedBorderButton href="/connection" label={t('hero_button_connection')} />
               <AnimatedBorderButton href="/services" label={t('hero_button_services')} />
             </div>
