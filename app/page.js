@@ -8,11 +8,11 @@ import ProfileCarousel from "./components/ProfileCarousel";
 import { MarqueeDemo } from "./components/GridCardImage";
 import Services from "./components/Services";
 import OrderForm from "./components/Cantact";
- import InfoCompany from "./components/InfoCompany";
+import InfoCompany from "./components/InfoCompany";
 import Loader from "./components/Loader";
 import SecondLoader from "./components/SecondLoader.jsx";
 import Footer from "./components/Footer";
- 
+
 export default function Home() {
   const [loadingState, setLoadingState] = useState('video'); // 'video', 'navbar', 'finished'
 
@@ -33,7 +33,7 @@ export default function Home() {
       {loadingState === 'navbar' && <SecondLoader />}
 
       <div className={loadingState === 'video' ? 'hidden' : 'block'}>
-         <div
+        <div
           className="fixed inset-0 z-0"
           style={{
             background: `radial-gradient(circle at top left, rgba(75, 22, 76, 0.2), transparent 60%),
@@ -42,7 +42,7 @@ export default function Home() {
                          #0C0B10`,
           }}
         />
-        
+
         {/* Main content wrapper with opacity transition */}
         <div className={`relative z-10 ${loadingState === 'finished' ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'}`}>
           {/* Navbar is now part of the page flow */}
@@ -51,34 +51,33 @@ export default function Home() {
           </div>
 
           {/* HEADER qismi */}
-         <div className="header min-h-screen relative overflow-hidden ">
-  {/* SVG chiziqli animatsiya */}
-  <div className="absolute -top-15 left-1/2 -translate-x-1/2 w-full max-w-5xl pointer-events-none z-10">
-    <Image
-      src="/Lineanimation.svg"
-      alt="Decorative lines"
-      width={914}
-      height={250}
-      className="w-full"
-      priority
-      id="decorative-lines"
-    />
-    
-  </div>
+          <div className="header min-h-screen relative overflow-hidden">
+            {/* SVG chiziqli animatsiya - faqat mobil uchun */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full pointer-events-none z-10">
+              <Image
+                src="/Lineanimation.svg"
+                alt="Decorative lines"
+                width={945}
+                height={250}
+                className="mobile-line-animation    m-auto "
+                priority
+                id="decorative-lines"
+              />
+            </div>
 
-  {/* Hero */}
-  <div className="relative z-20">
-    <Hero />
-  </div>
-  <div className="w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-75">
+            {/* Hero */}
+            <div className="hero-section     relative z-20">
+              <Hero  />
+            </div>
+            <div className="w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-75">
               <ProfileCarousel />
             </div>
-</div>
+ 
+          </div>
 
           {/* CONTENT qismi */}
           <div className="bg-[#111111]">
             <MarqueeDemo />
-
           </div>
           <div className="services">
             <Services />
@@ -95,12 +94,10 @@ export default function Home() {
 
           <div className="info">
             <InfoCompany />
-            <Footer  />
-           </div>
+            <Footer />
+          </div>
         </div>
       </div>
     </>
-    
   );
 }
-  
