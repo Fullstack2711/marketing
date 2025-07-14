@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 // Xizmat tugmasi komponenti
@@ -16,28 +16,43 @@ const ServiceButton = React.forwardRef(({ children, onMouseEnter, onMouseLeave }
   </div>
 ));
 
-// MarqueeWrapper faqat mobil uchun
-const MarqueeWrapper = ({ children, isPaused, onMouseEnter, onMouseLeave, onTouchStart, onTouchEnd }) => (
-  <div
-    className="marquee-mobile"
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-    onTouchStart={onTouchStart}
-    onTouchEnd={onTouchEnd}
-    style={{
-      animationPlayState: isPaused ? 'paused' : 'running',
-    }}
-  >
-    <div className="marquee-track">{children}{children}</div>
-  </div>
-);
+// SliderWrapper mobil uchun
+const SliderWrapper = ({ children }) => {
+  const sliderRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = React.Children.count(children);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 3000); // Har 3 soniyada slayd o'zgartirish
+    return () => clearInterval(interval);
+  }, [totalSlides]);
+
+  return (
+    <div className="slider-mobile w-full overflow-hidden relative">
+      <div
+        ref={sliderRef}
+        className="slider-track"
+        style={{
+          transform: `translateX(-${currentSlide * 100}%)`,
+          transition: 'transform 0.5s ease-in-out',
+          display: 'flex',
+        }}
+      >
+        {React.Children.map(children, (child) => (
+          <div style={{ minWidth: '100%', boxSizing: 'border-box' }}>{child}</div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 function Services() {
   const { t } = useLanguage();
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const buttonRefs = [useRef(null), useRef(null), useRef(null)];
   const [glowStyle, setGlowStyle] = useState({ left: '50%', width: '80px', opacity: 0 });
-  const [isMarqueePaused, setIsMarqueePaused] = useState(false);
 
   const handleMouseEnter = (idx) => {
     setHoveredIndex(idx);
@@ -60,10 +75,6 @@ function Services() {
     setGlowStyle({ ...glowStyle, opacity: 0 });
   };
 
-  // Marquee pause uchun eventlar
-  const handleMarqueePause = () => setIsMarqueePaused(true);
-  const handleMarqueeResume = () => setIsMarqueePaused(false);
-
   return (
     <>
       <section className="w-full bg-transparent py-24 flex flex-col items-center justify-center text-white relative z-10">
@@ -74,7 +85,7 @@ function Services() {
             {t('services_title')}
           </h2>
 
-          {/* Desktop: oddiy flex, Mobil: marquee */}
+          {/* Desktop: oddiy flex, Mobil: slider */}
           <div className="hidden sm:flex flex-wrap items-center justify-center gap-8 mb-16 w-full">
             <ServiceButton
               ref={buttonRefs[0]}
@@ -99,19 +110,13 @@ function Services() {
             </ServiceButton>
           </div>
 
-          {/* Mobil: marquee */}
-          <div className="sm:hidden mb-16 w-full overflow-x-hidden">
-            <MarqueeWrapper
-              isPaused={isMarqueePaused}
-              onMouseEnter={handleMarqueePause}
-              onMouseLeave={handleMarqueeResume}
-              onTouchStart={handleMarqueePause}
-              onTouchEnd={handleMarqueeResume}
-            >
+          {/* Mobil: slider */}
+          <div className="sm:hidden mb-16 w-full overflow-hidden">
+            <SliderWrapper>
               <ServiceButton>{t('services_button_personal_brand')}</ServiceButton>
               <ServiceButton>{t('services_button_digital_marketing')}</ServiceButton>
               <ServiceButton>{t('services_button_branding')}</ServiceButton>
-            </MarqueeWrapper>
+            </SliderWrapper>
           </div>
 
           {/* Chiziq — porlash bilan */}
@@ -167,9 +172,8 @@ function Services() {
           --border-size: 2px;
           --border-radius: 1rem;
 
-
           position: relative;
-          cursor:pointer;
+          cursor: pointer;
           min-width: 260px;
           flex-basis: 320px;
           flex-grow: 1;
@@ -210,26 +214,21 @@ function Services() {
           color: white;
         }
 
-        /* Marquee mobil uchun */
+        /* Slider mobil uchun */
         @media (max-width: 640px) {
-          .marquee-mobile {
-            width: 100vw;
-            overflow: hidden;
+          .slider-mobile {
+            height: 80px; /* Button balandligiga moslashtirildi */
             position: relative;
-            height: 70px;
-            user-select: none;
           }
-          .marquee-track {
-            display: flex;
-            gap: 16px;
-            width: max-content;
-            animation: marquee-move 12s linear infinite;
-            will-change: transform;
+          .slider-track {
+            height: 100%;
           }
-        }
-        @keyframes marquee-move {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          :global(.buttonContainer) {
+            min-width: 0 !important;
+            flex-basis: 100% !important;
+            width: 100% !important;
+            max-width: 100vw !important;
+          }
         }
       `}</style>
     </>

@@ -51,27 +51,29 @@ export default function Home() {
           </div>
 
           {/* HEADER qismi */}
-          <div className="header min-h-screen relative overflow-hidden ">
-            {/* SVG chiziqli animatsiya */}
-            <div className="absolute -top-15 left-1/2 -translate-x-1/2 w-full max-w-5xl pointer-events-none z-10">
-              <Image
-                src="/Lineanimation.svg"
-                alt="Decorative lines"
-                width={914}
-                height={250}
-                className="w-full"
-                priority
-              />
-            </div>
+         <div className="header min-h-screen relative overflow-hidden ">
+  {/* SVG chiziqli animatsiya */}
+  <div className="absolute -top-15 left-1/2 -translate-x-1/2 w-full max-w-5xl pointer-events-none z-10">
+    <Image
+      src="/Lineanimation.svg"
+      alt="Decorative lines"
+      width={914}
+      height={250}
+      className="w-full"
+      priority
+      id="decorative-lines"
+    />
+    
+  </div>
 
-            {/* Hero */}
-            <div className="relative z-20">
-              <Hero/>
-            </div>
-            <div className="w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-75">
+  {/* Hero */}
+  <div className="relative z-20">
+    <Hero />
+  </div>
+  <div className="w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-75">
               <ProfileCarousel />
             </div>
-          </div>
+</div>
 
           {/* CONTENT qismi */}
           <div className="bg-[#111111]">
@@ -98,6 +100,7 @@ export default function Home() {
         </div>
       </div>
     </>
+    
   );
 }
   
