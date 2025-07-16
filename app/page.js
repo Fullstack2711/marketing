@@ -67,10 +67,10 @@ export default function Home() {
 
 
             {/* Hero */}
-            <div className="hero-section     relative z-20 ">
+            <div id="hero" className="hero-section     relative z-20 ">
               <Hero  />
             </div>
-            <div className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-60">
+            <div id="jamoa" className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-60">
               <ProfileCarousel />
             </div>
  
@@ -80,14 +80,14 @@ export default function Home() {
           <div className="marquee      bg-[#111111]">
             <MarqueeDemo />
           </div>
-          <div className="services">
+          <div id="xizmatlar" className="services">
             <Services />
           </div>
 
           {/* White separator */}
           <div className="bg-white h-[60px]" />
 
-          <div className="contact">
+          <div id="contact" className="contact">
             <OrderForm />
           </div>
 

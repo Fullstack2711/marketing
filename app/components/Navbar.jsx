@@ -61,19 +61,19 @@ function Navbar() {
                 <div className="navContainer">
                   <div className="innerNav">
                     <Link
-                      href="/jamoa"
+                      href="#"
                       className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
                     >
                       {t("nav_team")}
                     </Link>
                     <Link
-                      href="/portfolio"
+                      href="#"
                       className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
                     >
                       {t("nav_portfolio")}
                     </Link>
                     <Link
-                      href="/xizmatlar"
+                      href="#"
                       className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
                     >
                       {t("nav_services")}
@@ -138,7 +138,7 @@ function Navbar() {
             </button>
             <div className="flex flex-col justify-center items-center flex-1 gap-10">
               <Link
-                href="#jamoa"
+                href="#"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
                 onClick={() => setIsMenuOpen(false)}
@@ -146,7 +146,7 @@ function Navbar() {
                 {t("nav_team")}
               </Link>
               <Link
-                href="#portfolio"
+                href="#"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
                 onClick={() => setIsMenuOpen(false)}
@@ -154,7 +154,7 @@ function Navbar() {
                 {t("nav_portfolio")}
               </Link>
               <Link
-                href="#xizmatlar"
+                href="#"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
                 onClick={() => setIsMenuOpen(false)}
