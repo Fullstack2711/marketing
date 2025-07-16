@@ -76,9 +76,10 @@ const OrderForm = () => {
         
         {/* Left Side Title */}
         <div className="text-start z-20 relative">
-          <h1 className="text-5xl md:text-6xl font-normal leading-tight text-white">
-            {t('order_form_title')}
-          </h1>
+          <h1 className="text-5xl md:text-6xl font-normal leading-tight text-white hidden sm:block">
+  {t('order_form_title')}
+</h1>
+
         </div>
 
         {/* Right Side Form */}
