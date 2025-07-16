@@ -53,24 +53,24 @@ export default function Home() {
           {/* HEADER qismi */}
           <div className="header min-h-screen relative overflow-hidden">
             {/* SVG chiziqli animatsiya - faqat mobil uchun */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full pointer-events-none z-10">
-              <Image
-                src="/Lineanimation.svg"
-                alt="Decorative lines"
-                width={945}
-                height={250}
-                className="mobile-line-animation    m-auto  "
-                priority
-                id="decorative-lines"
+            <div className="absolute top-0 lg:-top-12 left-1/2 -translate-x-1/2 w-full pointer-events-none z-10">
+  <Image
+    src="/Lineanimation.svg"
+    alt="Decorative lines"
+    width={945}
+    height={250}
+    className="mobile-line-animation m-auto"
+    priority
+    id="decorative-lines"
+  />
+</div>
 
-              />
-            </div>
 
             {/* Hero */}
-            <div className="hero-section     relative z-20">
+            <div className="hero-section     relative z-20 ">
               <Hero  />
             </div>
-            <div className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-75">
+            <div className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-60">
               <ProfileCarousel />
             </div>
  

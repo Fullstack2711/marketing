@@ -9,7 +9,7 @@ const ProfileCard = ({
   image = "/card.jpg"
 }) => {
   return (
-    <div className="relative w-[300px] h-[450px] rounded-3xl overflow-hidden shadow-xl border border-[#facc15]/20 p-px bg-black/10 group mx-6 my-4">
+    <div className="relative w-[300px] h-[400px] rounded-3xl overflow-hidden shadow-xl border border-[#facc15]/20 p-px bg-black/10 group mx-6 my-4">
       {/* Outer static border with new colors */}
       <div className="absolute inset-0 rounded-3xl [mask:linear-gradient(black,transparent)]">
         <div 

@@ -72,7 +72,7 @@ const ProfileCarousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[600px] flex items-center justify-around overflow-visible">
+    <div className="relative w-full h-[500px] lg:-top-45 flex items-center justify-around overflow-visible">
 
       <div className="relative flex items-center justify-around  gap-7">
         {profiles.map((profile, index) => (
