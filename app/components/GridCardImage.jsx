@@ -67,17 +67,29 @@ export function MarqueeDemo() {
   const { t } = useLanguage();
   return (
     <section className="w-full bg-white py-20 px-6 relative z-20">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         {/* Title */}
         <h2
-          className="marque   font-medium text-black mb-16 text-start"
+          className="marque font-medium mb-16 text-start"
           style={{
-            fontSize: 'clamp(40px, 6vw, 110px)',
-            maxWidth: '743px',
-            lineHeight: 1,
+            fontFamily: "PP Neue Montreal",
+            fontStyle: "Medium",
+            fontSize: "clamp(40px, 6vw, 110px)",
+            fontWeight: 500,
+            maxWidth: "743px",
+            lineHeight: 1.3,
+            background:
+              "linear-gradient(to right, rgba(0, 0, 0, 1), rgba(102, 102, 102, 1))",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            color: "transparent",
+            position: "relative",
+            left: "10%",
+            fontStretch: "100%",
           }}
         >
-          {t('customers_title')}
+          {t("customers_title")}
         </h2>
 
         {/* Marquee Carousel */}
@@ -85,7 +97,11 @@ export function MarqueeDemo() {
           {/* Birinchi qator - chapdan o‘ngga */}
           <Marquee reverse pauseOnHover className="[--duration:20s]">
             {firstRow.map((review) => (
-              <ReviewCard key={review.username} {...review} style={{width: '720px'}} />
+              <ReviewCard
+                key={review.username}
+                {...review}
+                style={{ width: "720px" }}
+              />
             ))}
           </Marquee>
 

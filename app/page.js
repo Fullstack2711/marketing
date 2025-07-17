@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -14,25 +14,25 @@ import SecondLoader from "./components/SecondLoader.jsx";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const [loadingState, setLoadingState] = useState('video'); // 'video', 'navbar', 'finished'
+  const [loadingState, setLoadingState] = useState("video"); // 'video', 'navbar', 'finished'
 
   useEffect(() => {
-    if (loadingState === 'video') {
-      const timer = setTimeout(() => setLoadingState('navbar'), 1000); // 1s for video
+    if (loadingState === "video") {
+      const timer = setTimeout(() => setLoadingState("navbar"), 1000); // 1s for video
       return () => clearTimeout(timer);
     }
-    if (loadingState === 'navbar') {
-      const timer = setTimeout(() => setLoadingState('finished'), 1500); // 1.5s for navbar animation
+    if (loadingState === "navbar") {
+      const timer = setTimeout(() => setLoadingState("finished"), 1500); // 1.5s for navbar animation
       return () => clearTimeout(timer);
     }
   }, [loadingState]);
 
   return (
     <>
-      {loadingState === 'video' && <Loader />}
-      {loadingState === 'navbar' && <SecondLoader />}
+      {loadingState === "video" && <Loader />}
+      {loadingState === "navbar" && <SecondLoader />}
 
-      <div className={loadingState === 'video' ? 'hidden' : 'block'}>
+      <div className={loadingState === "video" ? "hidden" : "block"}>
         <div
           className="fixed inset-0 z-0"
           style={{
@@ -44,9 +44,21 @@ export default function Home() {
         />
 
         {/* Main content wrapper with opacity transition */}
-        <div className={`relative z-10 ${loadingState === 'finished' ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'}`}>
+        <div
+          className={`relative z-10 ${
+            loadingState === "finished"
+              ? "opacity-100 transition-opacity duration-1000"
+              : "opacity-0"
+          }`}
+        >
           {/* Navbar is now part of the page flow */}
-          <div className={`w-full z-50 cursor-pointer ${loadingState !== 'finished' ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`}>
+          <div
+            className={`w-full z-50 cursor-pointer ${
+              loadingState !== "finished"
+                ? "opacity-0"
+                : "opacity-100 transition-opacity duration-500"
+            }`}
+          >
             <Navbar />
           </div>
 
@@ -54,26 +66,27 @@ export default function Home() {
           <div className="header min-h-screen relative overflow-hidden">
             {/* SVG chiziqli animatsiya - faqat mobil uchun */}
             <div className="absolute top-0 lg:-top-12 left-1/2 -translate-x-1/2 w-full pointer-events-none z-10">
-  <Image
-    src="/Lineanimation.svg"
-    alt="Decorative lines"
-    width={945}
-    height={250}
-    className="mobile-line-animation m-auto"
-    priority
-    id="decorative-lines"
-  />
-</div>
-
+              <Image
+                src="/Lineanimation.svg"
+                alt="Decorative lines"
+                width={945}
+                height={250}
+                className="mobile-line-animation m-auto"
+                priority
+                id="decorative-lines"
+              />
+            </div>
 
             {/* Hero */}
             <div id="hero" className="hero-section     relative z-20 ">
-              <Hero  />
+              <Hero />
             </div>
-            <div id="jamoa" className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-15rem] mb-14 transform scale-70">
+            <div
+              id="jamoa"
+              className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-15rem] mb-14 transform scale-70"
+            >
               <ProfileCarousel />
             </div>
- 
           </div>
 
           {/* CONTENT qismi */}

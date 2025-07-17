@@ -40,54 +40,52 @@ function Navbar() {
           <div className="container mx-auto px-6 py-4">
             <nav className="flex justify-between items-center relative z-10">
               {/* Language Switcher */}
-             <div className="flex-1 flex justify-start items-center gap-2 text-sm">
-  <button
-    onClick={() => setLanguage("ru")}
-    className={language === "ru" ? "text-white font-medium" : "text-gray-400 hover:text-white transition-colors focus:outline-none"}
-  >
-    Rus
-  </button>
-  
-  <span className="text-transparent bg-gradient-to-r from-gray-400 to-white bg-clip-text animate-pulse">|</span>
-  
-  <button
-    onClick={() => setLanguage("uz")}
-    className={language === "uz" ? "text-white font-medium" : "text-gray-400 hover:text-white transition-colors focus:outline-none"}
-  >
-    Uzb
-  </button>
-</div>
+              <div className="flex-1 flex justify-start items-center gap-2 text-sm">
+                <button
+                  onClick={() => setLanguage("ru")}
+                  className={language === "ru" ? "text-white font-medium" : "text-gray-400 hover:text-white transition-colors focus:outline-none"}
+                >
+                  Rus
+                </button>
+                <span className="text-gray-500">|</span>
+                <button
+                  onClick={() => setLanguage("uz")}
+                  className={language === "uz" ? "text-white font-medium" : "text-gray-400 hover:text-white transition-colors focus:outline-none"}
+                >
+                  Uzb
+                </button>
+              </div>
 
               {/* Desktop Navigation Links */}
               <div className="hidden md:flex justify-center flex-grow">
                 <div className="navContainer">
-      <div className="innerNav">
-        <Link
-          href="#"
-          className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
-        >
-          {t("nav_team")}
-        </Link>
-        <Link
-          href="#"
-          className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
-        >
-          {t("nav_portfolio")}
-        </Link>
-        <Link
-          href="#"
-          className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
-        >
-          {t("nav_services")}
-        </Link>
-        <button
-          onClick={handleOpenModal}
-          className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
-        >
-          {t("nav_contact")}
-        </button>
-      </div>
-      </div>
+                  <div className="innerNav">
+                    <Link
+                      href="/jamoa"
+                      className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+                    >
+                      {t("nav_team")}
+                    </Link>
+                    <Link
+                      href="/portfolio"
+                      className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+                    >
+                      {t("nav_portfolio")}
+                    </Link>
+                    <Link
+                      href="/xizmatlar"
+                      className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+                    >
+                      {t("nav_services")}
+                    </Link>
+                    <button
+                      onClick={handleOpenModal}
+                      className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
+                    >
+                      {t("nav_contact")}
+                    </button>
+                  </div>
+                </div>
               </div>
 
               {/* Desktop Contact Info */}
@@ -140,7 +138,7 @@ function Navbar() {
             </button>
             <div className="flex flex-col justify-center items-center flex-1 gap-10">
               <Link
-                href="#"
+                href="#jamoa"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
                 onClick={() => setIsMenuOpen(false)}
@@ -148,7 +146,7 @@ function Navbar() {
                 {t("nav_team")}
               </Link>
               <Link
-                href="#"
+                href="#portfolio"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
                 onClick={() => setIsMenuOpen(false)}
@@ -156,7 +154,7 @@ function Navbar() {
                 {t("nav_portfolio")}
               </Link>
               <Link
-                href="#"
+                href="#xizmatlar"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
                 onClick={() => setIsMenuOpen(false)}
@@ -224,25 +222,22 @@ function Navbar() {
           transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        
+        .navContainer:hover {
+          transform: scale(1.02);
+          opacity: 1;
+        }
 
         .innerNav {
           display: flex;
           align-items: center;
           gap: 3rem;
-          padding: 5px 22px;
+          padding: 0.5rem 2rem;
           border-radius: calc(var(--border-radius) - var(--border-size));
           background: var(--background);
           backdrop-filter: blur(10px);
           border: 1px solid rgba(255, 255, 255, 0.1);
-          font-family: "PP Neue Montreal,san-serif";
-          font-size:15px;
-          font-weight: 200px
-          font-style: book;
-          line-height: 20px;
-         
+          font-family: "PP Neue Montreal", sans-serif;
         }
-  border-animation 
       `}</style>
     </>
   );
