@@ -85,7 +85,7 @@ export function MarqueeDemo() {
           {/* Birinchi qator - chapdan o‘ngga */}
           <Marquee reverse pauseOnHover className="[--duration:20s]">
             {firstRow.map((review) => (
-              <ReviewCard key={review.username} {...review} />
+              <ReviewCard key={review.username} {...review} style={{width: '720px'}} />
             ))}
           </Marquee>
 

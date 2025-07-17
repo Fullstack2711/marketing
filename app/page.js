@@ -70,7 +70,7 @@ export default function Home() {
             <div id="hero" className="hero-section     relative z-20 ">
               <Hero  />
             </div>
-            <div id="jamoa" className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-18rem] mb-14 transform scale-60">
+            <div id="jamoa" className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-15rem] mb-14 transform scale-70">
               <ProfileCarousel />
             </div>
  

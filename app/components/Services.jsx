@@ -186,11 +186,7 @@ function Services() {
           transition: transform 0.3s ease, background 0.3s ease;
         }
 
-        :global(.buttonContainer:hover) {
-          transform: scale(1.02);
-          background: linear-gradient(rgba(12, 11, 16, 1), rgba(12, 11, 16, 1)) padding-box,
-            conic-gradient(from var(--angle), var(--border-color-1), var(--border-color-2), var(--border-color-1)) border-box;
-        }
+        
 
         :global(.innerContent) {
           display: flex;
@@ -198,8 +194,7 @@ function Services() {
           justify-content: center;
           padding: 1rem 2.5rem;
           border-radius: calc(var(--border-radius) - var(--border-size));
-          background: var(--background);
-          color: var(--foreground);
+           color: var(--foreground);
           font-family: "PP Neue Montreal", sans-serif;
           font-weight: 300;
           font-style: normal;
@@ -209,10 +204,7 @@ function Services() {
           transition: color 0.3s ease, background 0.3s ease;
         }
 
-        :global(.buttonContainer:hover .innerContent) {
-          background: rgba(12, 11, 16, 1);
-          color: white;
-        }
+       
 
         /* Slider mobil uchun */
         @media (max-width: 640px) {

@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="relative min-h-screen lg:-top-5 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8 pb-15       ">
+      <div className="relative min-h-screen lg:-top-5 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8 pb-30       ">
         {/* Main Content Container */}
         <div className="relative z-10 max-w-6xl mx-auto w-full">
           {/* Desktop Layout (lg and up) */}
