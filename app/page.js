@@ -98,14 +98,12 @@ export default function Home() {
           </div>
 
           {/* White separator */}
-          <div className="bg-white h-[60px]" />
-
+ 
           <div id="contact" className="contact">
             <OrderForm />
           </div>
 
-          <div className="bg-white h-[120px]" />
-
+ 
           <div className="info">
             <InfoCompany />
             <Footer />
