@@ -10,45 +10,44 @@ const reviews = [
     username: "@jack",
     body: "I've never seen anything like this before. It's amazing. I love it.",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+    width: "w-62",
   },
-  {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-  },
+  
   {
     name: "John",
     username: "@john",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+    width: "w-90",
   },
   {
     name: "Jane",
     username: "@jane",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+    width: "w-62",
   },
   {
     name: "Jenny",
     username: "@jenny",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+    width: "w-90",
   },
-  {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-  },
+  
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
-const ReviewCard = ({ img, name, username, body }) => {
+const ReviewCard = ({ img, name, username, body, width }) => {
   return (
-    <div className="w-72 h-48 relative overflow-hidden rounded-xl shadow-md border border-gray-800 bg-black cursor-pointer">
+    <div
+      className={cn(
+        "h-48 relative overflow-hidden rounded-xl shadow-md border border-gray-800 bg-black cursor-pointer",
+        width
+      )}
+    >
       <img
         src={img}
         alt="Review image"
@@ -97,11 +96,7 @@ export function MarqueeDemo() {
           {/* Birinchi qator - chapdan o‘ngga */}
           <Marquee reverse pauseOnHover className="[--duration:20s]">
             {firstRow.map((review) => (
-              <ReviewCard
-                key={review.username}
-                {...review}
-                style={{ width: "720px" }}
-              />
+              <ReviewCard key={review.username} {...review} />
             ))}
           </Marquee>
 
