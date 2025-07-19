@@ -480,7 +480,7 @@
 
 }
 
-body {
+html,body {
   overflow-x: hidden !important; /* Default holatda barcha qurilmalar uchun */
 }
 
