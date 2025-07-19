@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+*{
+ 
+  box-sizing: border-box;
+}
 @custom-variant dark (&:is(.dark *));
 
 @keyframes spin {
@@ -477,5 +481,14 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important; /* Default holatda barcha qurilmalar uchun */
 }
+
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden !important; /* Mobile uchun alohida belgilash (zarur bo‘lsa) */
+  }
+}
+
+
+
