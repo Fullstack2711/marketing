@@ -378,3 +378,95 @@
   border-radius: 100px;
   width: 100%;
 }
+
+
+
+@property --border-angle-1 {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+@keyframes rotateBorder {
+  to {
+    --border-angle-1: 360deg;
+  }
+}
+
+.animated-border {
+  --border-angle-1: 0deg;
+  --border-angle-2: 180deg;
+  --border-color-1: #F09470;  /* Orange */
+  --border-color-2: rgba(207, 222, 252, 0.6); /* Blue */
+  --border-size: 1.5px;
+  --border-radius: 1rem;
+  padding: var(--border-size);
+  border-radius: var(--border-radius);
+
+  background-image:
+    conic-gradient(
+      from var(--border-angle-1),
+      transparent,
+      var(--border-color-1) 20%,
+      transparent 60%,
+      transparent
+    ),
+    conic-gradient(
+      from var(--border-angle-2),
+      transparent,
+      var(--border-color-2) 10%,
+      transparent 50%,
+      transparent
+    );
+
+  animation:
+    rotateBorder1 6s linear infinite,
+    rotateBorder2 9s linear infinite;
+}
+
+@property --border-angle-1 {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+@property --border-angle-2 {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 180deg;
+}
+
+@keyframes rotateBorder1 {
+  to {
+    --border-angle-1: 360deg;
+  }
+}
+@keyframes rotateBorder2 {
+  to {
+    --border-angle-2: -360deg;
+  }
+}
+
+
+.inner {
+  border-radius: calc(var(--border-radius) - var(--border-size));
+  background: hsl(0, 1%, 55%);
+}
+
+.inputStyle {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.75rem 1rem;
+  color: white;
+  font-weight: 200;
+  border-radius: inherit;
+  position: relative;
+  bottom: 35px;
+  
+}
+.inputStylebtn{
+  position: relative;
+    padding: 0.75rem 1rem;
+    left: 40%;
+
+}

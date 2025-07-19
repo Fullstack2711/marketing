@@ -70,6 +70,15 @@ const OrderForm = () => {
     return null;
   }
 
+
+  const InputWrapper = ({ children }) => {
+  return (
+    <div className="animated-border">
+      <div className="inner">{children}</div>
+    </div>
+  );
+};
+
   return (
     <section className="w-full bg-transparent flex items-center justify-center text-white py-20 px-8 relative z-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
@@ -98,54 +107,58 @@ const OrderForm = () => {
             </div>
           )}
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name" className="block text-sm font-light text-gray-400 mb-2">{t('order_form_name_label')}</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-                className="w-full p-3 bg-gray/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors"
-                placeholder={t('order_form_name_label')}
-              />
-            </div>
-            <div>
-              <label htmlFor="contact" className="block text-sm font-light text-gray-400 mb-2">{t('order_form_contact_label')}</label>
-              <input
-                id="contact"
-                name="contact"
-                type="text"
-                value={formData.contact}
-                onChange={handleInputChange}
-                required
-                className="w-full p-3 bg-gray/20 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors"
-                placeholder={t('order_form_contact_label')}
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-light text-gray-400 mb-2">{t('order_form_message_label')}</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                value={formData.message}
-                onChange={handleInputChange}
-                required
-                className="w-full p-3 bg-gray/40 rounded-xl border border-[#F09470] focus:border-[#F09470] focus:ring-0 outline-none transition-colors resize-none"
-                placeholder={t('order_form_message_label')}
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full p-3 bg-white/10 rounded-xl border border-white/10 hover:bg-white/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? 'Yuborilmoqda...' : t('order_form_submit_button')}
-            </button>
-          </form>
+          <form className="space-y-9   "       
+ onSubmit={handleSubmit}>
+  <InputWrapper>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      value={formData.name}
+      onChange={handleInputChange}
+      required
+      className="inputStyle placeholder-cyan-50  "
+      placeholder={t('order_form_name_label')}
+    />
+  </InputWrapper>
+
+  <InputWrapper>
+    <input
+      id="contact"
+      name="contact"
+      type="text"
+      value={formData.contact}
+      onChange={handleInputChange}
+      required
+      className="inputStyle   placeholder-cyan-50"
+      placeholder={t('order_form_contact_label')}
+    />
+  </InputWrapper>
+
+  <InputWrapper>
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      value={formData.message}
+      onChange={handleInputChange}
+      required
+      className="inputStyle resize-none     placeholder-cyan-50"
+      placeholder={t('order_form_message_label')}
+    ></textarea>
+  </InputWrapper>
+
+  <InputWrapper>
+    <button
+      type="submit"
+      disabled={isSubmitting}
+      className="inputStylebtn cursor-pointer"
+    >
+      {isSubmitting ? 'Yuborilmoqda...' : t('order_form_submit_button')}
+    </button>
+  </InputWrapper>
+</form>
+
         </div>
 
       </div>
