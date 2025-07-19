@@ -12,7 +12,16 @@ function InfoCompany() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         
         {/* Left Column: Text Content */}
-        <div className="space-y-8">
+        <div className="space-y-8" style={
+          {
+            fontFamily:'PP Neue Montreal',
+            fontWeight:'400px',
+            fontStyle:'Book',
+            fontSize:'20px',
+            lineHeight:'29.5px'
+
+          }
+        }>
           <h2 className="text-2xl font-light text-white">
             {t('info_company_title', 'Result marketing agency')}
           </h2>

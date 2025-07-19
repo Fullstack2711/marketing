@@ -93,12 +93,15 @@ function Navbar() {
                 <a href="tel:+998954193333" className="text-sm text-white hover:text-white transition-colors duration-200">
                   +998 95 419 33 33
                 </a>
-                <button
-                  onClick={handleOpenModal}
-                  className="px-4 py-1.5 text-white bg-white/10 backdrop-blur-md border border-white/40 rounded-full hover:border-white/60 text-sm transition-all duration-200"
-                >
-                  {t("nav_contact")}
-                </button>
+               <div className="animated-border-btn rounded-full">
+  <button
+    onClick={handleOpenModal}
+    className="btn-inner px-4 py-1.5 text-white text-sm transition-all duration-200 rounded-full"
+  >
+    {t("nav_contact")}
+  </button>
+</div>
+
               </div>
 
               {/* Mobile Menu Button */}
@@ -120,7 +123,13 @@ function Navbar() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-gray-900/80 backdrop-blur-lg fixed inset-0 w-full min-h-screen z-50 flex flex-col">
+<div className="md:hidden fixed inset-0 w-full min-h-screen z-50 flex flex-col"
+     style={{
+       background: 'linear-gradient(135deg, #1E1D22, #0C0B10)',
+       backdropFilter: 'blur(16px)',
+       backgroundColor: 'rgba(30, 29, 34, 0.8)' // optional for fallback
+     }}
+>
             {/* Bog'lanish buttoni eng tepadagi chap burchakda */}
             <button
               onClick={handleOpenModal}
@@ -238,6 +247,55 @@ function Navbar() {
           border: 1px solid rgba(255, 255, 255, 0.1);
           font-family: "PP Neue Montreal", sans-serif;
         }
+          
+
+
+
+
+        @property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@keyframes rotateBorder {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.animated-border-btn {
+  --border-angle: 0deg;
+  --border-color-1: rgba(255, 255, 255, 0.7);
+  --border-color-2: rgba(255, 255, 255, 0.3);
+  --border-radius: 9999px;
+  --border-size: 1px;
+  padding: var(--border-size); /* border qalinligi */
+  border-radius: var(--border-radius);
+  background-image:
+    conic-gradient(
+      from var(--border-angle),
+      var(--border-color-1),
+      var(--border-color-2),
+      var(--border-color-1)
+    );
+  animation: rotateBorder 4s linear infinite;
+}
+
+.btn-inner {
+  background-color:  #1E1D22;
+   border-radius: inherit;
+   color: white;
+  padding: 0.375rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-inner:hover {
+  background-color:  #1E1D22;
+}
+
       `}</style>
     </>
   );

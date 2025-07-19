@@ -80,8 +80,8 @@ const OrderForm = () => {
 };
 
   return (
-    <section className="w-full bg-transparent flex items-center justify-center text-white py-20 px-8 relative z-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+    <section className="w-full  bg-transparent flex items-center justify-center text-white py-20 px-8 relative z-10">
+      <div className="grid   grid-cols-1 md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
         
         {/* Left Side Title */}
         <div className="text-start z-20 relative">
