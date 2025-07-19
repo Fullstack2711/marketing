@@ -258,6 +258,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  
 }
 
 .foooter{
@@ -265,6 +266,10 @@
   justify-content: end;
   align-items: center;
   padding-right: 55px;
+   background-image: url('/contactbg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @font-face {
@@ -467,7 +472,7 @@
 .inputStylebtn{
   position: relative;
     padding: 0.75rem 1rem;
-    left: 40%;
+   
 
 }
 

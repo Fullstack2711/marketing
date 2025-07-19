@@ -81,7 +81,7 @@ function Services() {
         <div className="w-full max-w-6xl mx-auto text-start px-8">
           
           {/* Sarlavha */}
-          <h2 className="title text-7xl font-light mb-12 text-white">
+          <h2 className="sarlavha   title text-7xl font-light mb-12 text-white">
             {t('services_title')}
           </h2>
 
@@ -221,6 +221,11 @@ function Services() {
             width: 100% !important;
             max-width: 100vw !important;
           }
+            .sarlavha{
+            font-size: 45px;
+            position:relative;
+            left:22%
+            }
         }
       `}</style>
     </>

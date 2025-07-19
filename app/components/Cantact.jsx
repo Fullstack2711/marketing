@@ -15,7 +15,6 @@ const OrderForm = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Bu hook faqat klient tomonida, komponent DOMga qo'shilgandan so'ng ishlaydi.
     setIsClient(true);
   }, []);
 
@@ -65,100 +64,97 @@ const OrderForm = () => {
   };
 
   if (!isClient) {
-    // Serverda va klientning birinchi renderida hech narsa ko'rsatilmaydi.
-    // Bu server va klient HTML'ining bir xil bo'lishini ta'minlaydi.
     return null;
   }
 
-
   const InputWrapper = ({ children }) => {
-  return (
-    <div className="animated-border">
-      <div className="inner">{children}</div>
-    </div>
-  );
-};
+    return (
+      <div className="animated-border">
+        <div className="inner">{children}</div>
+      </div>
+    );
+  };
 
   return (
-    <section className="w-full  bg-transparent flex items-center justify-center text-white py-20 px-8 relative z-10">
-      <div className="grid   grid-cols-1 md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
-        
+    <section className="w-full bg-transparent flex items-center justify-center text-white py-16 px-4 sm:px-8 relative z-10 overflow-x-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start w-full max-w-6xl mx-auto">
+
         {/* Left Side Title */}
-        <div className="text-start z-20 relative">
-          <h1 className="text-5xl md:text-6xl font-normal leading-tight text-white hidden sm:block">
+        <div className="text-start z-20 relative px-2 md:px-0">
+          <h1 className="hidden md:block text-4xl sm:text-5xl md:text-6xl font-normal leading-tight text-white">
   {t('order_form_title')}
 </h1>
 
         </div>
 
         {/* Right Side Form */}
-        <div className="backdrop-blur-lg rounded-3xl p-8 border border-[#F09470] z-10 relative bg-[#FFFFFF33]">
-          <h2 className="text-2xl font-light mb-6 text-center text-white">{t('order_form_subtitle')}</h2>
-          
+<div className="w-full max-w-md md:max-w-lg lg:max-w-xl backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-[#F09470] z-10 relative bg-[#FFFFFF33] mx-auto">
+          <h2 className="text-xl sm:text-2xl font-light mb-8 text-center text-white md:display:none">
+            {t('order_form_subtitle')}
+          </h2>
+
           {submitStatus === 'success' && (
-            <div className="mb-4 p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-200">
+            <div className="mb-4 p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-200 text-sm">
               Xabar muvaffaqiyatli yuborildi!
             </div>
           )}
-          
+
           {submitStatus === 'error' && (
-            <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200">
+            <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-sm">
               {errorMessage}
             </div>
           )}
 
-          <form className="space-y-9   "       
- onSubmit={handleSubmit}>
-  <InputWrapper>
-    <input
-      id="name"
-      name="name"
-      type="text"
-      value={formData.name}
-      onChange={handleInputChange}
-      required
-      className="inputStyle placeholder-cyan-50  "
-      placeholder={t('order_form_name_label')}
-    />
-  </InputWrapper>
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <InputWrapper>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+                className="inputStyle w-full placeholder-cyan-50"
+                placeholder={t('order_form_name_label')}
+              />
+            </InputWrapper>
 
-  <InputWrapper>
-    <input
-      id="contact"
-      name="contact"
-      type="text"
-      value={formData.contact}
-      onChange={handleInputChange}
-      required
-      className="inputStyle   placeholder-cyan-50"
-      placeholder={t('order_form_contact_label')}
-    />
-  </InputWrapper>
+            <InputWrapper>
+              <input
+                id="contact"
+                name="contact"
+                type="text"
+                value={formData.contact}
+                onChange={handleInputChange}
+                required
+                className="inputStyle w-full placeholder-cyan-50"
+                placeholder={t('order_form_contact_label')}
+              />
+            </InputWrapper>
 
-  <InputWrapper>
-    <textarea
-      id="message"
-      name="message"
-      rows="4"
-      value={formData.message}
-      onChange={handleInputChange}
-      required
-      className="inputStyle resize-none     placeholder-cyan-50"
-      placeholder={t('order_form_message_label')}
-    ></textarea>
-  </InputWrapper>
+            <InputWrapper>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+                className="inputStyle resize-none w-full placeholder-cyan-50"
+                placeholder={t('order_form_message_label')}
+              ></textarea>
+            </InputWrapper>
 
-  <InputWrapper>
-    <button
-      type="submit"
-      disabled={isSubmitting}
-      className="inputStylebtn cursor-pointer"
-    >
-      {isSubmitting ? 'Yuborilmoqda...' : t('order_form_submit_button')}
-    </button>
-  </InputWrapper>
-</form>
-
+            <InputWrapper>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="inputStylebtn w-full text-center cursor-pointer"
+              >
+                {isSubmitting ? 'Yuborilmoqda...' : t('order_form_submit_button')}
+              </button>
+            </InputWrapper>
+          </form>
         </div>
 
       </div>

@@ -106,7 +106,7 @@ export default function Home() {
  
           <div className="info">
             <InfoCompany />
-            <Footer />
+           
           </div>
         </div>
       </div>
