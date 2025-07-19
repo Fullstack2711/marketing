@@ -85,7 +85,7 @@ export function MarqueeDemo() {
           style={{
             fontFamily: "PP Neue Montreal",
             fontStyle: "Medium",
-            fontSize: "clamp(40px, 6vw, 110px)",
+            fontSize: "clamp(50px, 7vw, 110px)",
             fontWeight: 500,
             maxWidth: "743px",
             lineHeight: 1.3,
@@ -96,7 +96,7 @@ export function MarqueeDemo() {
             backgroundClip: "text",
             color: "transparent",
             position: "relative",
-            left: "10%",
+            left: "7%",
             fontStretch: "100%",
           }}
         >
