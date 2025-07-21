@@ -58,7 +58,7 @@ const Hero = () => {
             </div>
           </div>
           {/* Subtitle with Border */}
-          <div className="relative -top-5 sm:-top-14 md:-top-14 lg:-top-16 xl:-top-15 flex flex-col items-center">
+          <div  style={{ paddingTop:'20px' }} className="relative  sm:-top-14 md:-top-14 lg:-top-16 xl:-top-15 flex flex-col items-center ">
             <p className="text-sm sm:text-base md:text-lg text-gray-400 font-light tracking-wide max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl px-2">
               {t('hero_subtitle')}
             </p>

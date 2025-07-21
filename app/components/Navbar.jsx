@@ -295,7 +295,6 @@ function Navbar() {
 .btn-inner:hover {
   background-color:  #1E1D22;
 }
-
       `}</style>
     </>
   );

@@ -475,18 +475,18 @@
 }
 .inputStylebtn{
   position: relative;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1rem;  
    
 
 }
 
 html,body {
-  overflow-x: hidden !important; /* Default holatda barcha qurilmalar uchun */
+  overflow-x: hidden !important;  
 }
 
 @media (max-width: 640px) {
   body {
-    overflow-x: hidden !important; /* Mobile uchun alohida belgilash (zarur bo‘lsa) */
+    overflow-x: hidden !important;  
   }
 }
 
