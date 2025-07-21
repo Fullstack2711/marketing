@@ -66,87 +66,79 @@ const Hero = () => {
           </div>
         </div>
         <style jsx>{`
-          @property --border-angle-1 {
+          @property --border-angle {
             syntax: "<angle>";
             inherits: true;
             initial-value: 0deg;
           }
-          @property --border-angle-2 {
-            syntax: "<angle>";
-            inherits: true;
-            initial-value: 90deg;
-          }
-          @property --border-angle-3 {
-            syntax: "<angle>";
-            inherits: true;
-            initial-value: 180deg;
-          }
           @keyframes rotateBackground {
-            to { --border-angle-1: 360deg; }
-          }
-          @keyframes rotateBackground2 {
-            to { --border-angle-2: -270deg; }
-          }
-          @keyframes rotateBackground3 {
-            to { --border-angle-3: 540deg; }
+            to { --border-angle: 360deg; }
           }
           :global(.link) {
             display: inline-block;
             text-decoration: none;
           }
           :global(.fancyButton) {
-            --border-color-1: rgba(120, 160, 240, 0.6); /* #B7D9FE33 20% shaffoflik */
-            --border-color-2: rgb(240, 148, 112); /* #F09470 */
+            --border-color-1: #F09470;
+            --border-color-2: #B7D9FE; /* Brighter */
             --background: #1A1A1A;
             --foreground: #D1D5DB;
-            --border-size: 1px;
             --border-radius: 2em;
-            --border-angle-1: 0deg;
-            --border-angle-2: 90deg;
-            --border-angle-3: 180deg;
+            --border-angle: 0deg;
+            --border-width: 1px;
+            
             color: var(--foreground);
             font-size: calc(0.8rem + 1vmin);
             font-family: "Aspekta", sans-serif;
             border: 0;
-            padding: var(--border-size);
+            padding: var(--border-width);
             display: flex;
             width: max-content;
             border-radius: var(--border-radius);
             background-color: transparent;
             background-image: conic-gradient(
-                from var(--border-angle-1) at 10% 15%,
-                transparent,
-                var(--border-color-2) 10%,
-                transparent 30%,
-                transparent
-              ),
-              conic-gradient(
-                from var(--border-angle-2) at 70% 60%,
-                transparent,
-                var(--border-color-1) 10%,
-                transparent 60%,
-                transparent
-              ),
-              conic-gradient(
-                from var(--border-angle-3) at 50% 20%,
-                transparent,
-                var(--border-color-2) 10%,
-                transparent 50%,
-                transparent
-              );
-            animation: 
-              rotateBackground 3s linear infinite,
-              rotateBackground2 8s linear infinite,
-              rotateBackground3 13s linear infinite;
-            transition: color 0.3s ease;
+              from var(--border-angle) at 50% 50%,
+              /* Orange Segment */
+              var(--border-color-1) 0deg,
+              var(--border-color-1) 175deg,
+              /* Gap 1 */
+              transparent 175deg,
+              transparent 185deg,
+              /* Blue Segment */
+              var(--border-color-2) 185deg,
+              var(--border-color-2) 355deg,
+              /* Gap 2 */
+              transparent 355deg,
+              transparent 360deg
+            );
+            animation: rotateBackground 8s linear infinite;
+            position: relative;
+            z-index: 0;
+            transition: color 0.4s ease;
           }
+
+          :global(.fancyButton::before) {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: inherit;
+            border-radius: inherit;
+            animation: inherit;
+            filter: blur(10px);
+            z-index: -1;
+          }
+
           :global(.fancyButton:hover) {
             color: white;
           }
+
           :global(.innerDiv) {
             background: var(--background);
             padding: 0.55em 1.5em;
-            border-radius: calc(var(--border-radius) - var(--border-size));
+            border-radius: calc(var(--border-radius) - var(--border-width));
             color: inherit;
             font-weight: 200;
             transition: color 0.3s ease;
@@ -158,4 +150,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
