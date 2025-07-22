@@ -17,11 +17,10 @@ const ProfileCard = ({
             fill
             className="object-cover object-top"
           />
-           <div className="absolute top-0 left-0 w-full h-[140px] bg-gradient-to-b from-black/0 via-black/10 to-transparent"></div>
-           <div className="absolute top-[25%] left-0 w-full h-[50%] bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
-        </div>
+           <div className="absolute top-0 left-0 w-full h-[140px] bg-gradient-to-b  "></div>
+         </div>
 
-         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 font-thin">
+         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t  font-thin">
           <div className="text-white font-bastardo text-center space-y-2 pb-8">
             <h3 className="text-2xl font-light">{name}</h3>
             <p className="text-sm text-gray-300">
@@ -41,15 +40,15 @@ const ProfileCard = ({
         }
         .animated-border-card {
           --border-color-1: #F09470;
-          --border-color-2: #B7D9FE;
+          --border-color-2: #B9D9FE;
           --background: #000;
           --border-radius: 1.5rem; /* rounded-3xl */
           --border-angle: 0deg;
           --border-width: 1px;
           
           position: relative;
-          width: 300px;
-          height: 450px;
+          width: 280px;
+          height: 390px;
           margin: 1.5rem; /* Corresponds to mx-6 my-4 */
           border-radius: var(--border-radius);
           padding: var(--border-width);
@@ -57,10 +56,9 @@ const ProfileCard = ({
           background-color: transparent;
           background-image: conic-gradient(
             from var(--border-angle) at 50% 50%,
-            var(--border-color-1) 0deg,
-            var(--border-color-1) 180deg,
-            var(--border-color-2) 180deg,
-            var(--border-color-2) 360deg
+            var(--border-color-1),
+            var(--border-color-2),
+            var(--border-color-1)
           );
           animation: rotateBackground 15s linear infinite;
           transition: animation-duration 0.3s ease;
@@ -72,20 +70,6 @@ const ProfileCard = ({
           animation-duration: 3s;
         }
 
-        .animated-border-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: inherit;
-          border-radius: inherit;
-          animation: inherit;
-          filter: blur(10px);
-          z-index: -1;
-        }
-
         .card-inner-content {
           background: var(--background);
           border-radius: calc(var(--border-radius) - var(--border-width));
@@ -93,6 +77,20 @@ const ProfileCard = ({
           height: 100%;
           position: relative;
           overflow: hidden;
+        }
+
+        .animated-border-card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: inherit;
+          border-radius: inherit;
+          animation: inherit;
+          filter: blur(5px);
+          z-index: -1;
         }
       `}</style>
     </div>

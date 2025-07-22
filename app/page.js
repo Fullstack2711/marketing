@@ -65,12 +65,12 @@ export default function Home() {
           {/* HEADER qismi */}
           <div className="header min-h-screen relative overflow-hidden">
             {/* SVG chiziqli animatsiya - faqat mobil uchun */}
-            <div className="absolute top-0 lg:-top-12 left-1/2 -translate-x-1/2 w-full pointer-events-none z-10">
+            <div className="absolute top-0 lg:-top-10 left-1/2 -translate-x-1/2  w-full pointer-events-none z-10">
               <Image
                 src="/Lineanimation.svg"
                 alt="Decorative lines"
-                width={945}
-                height={250}
+                width={920}
+                height={250} 
                 className="mobile-line-animation m-auto"
                 priority
                 id="decorative-lines"
@@ -83,7 +83,7 @@ export default function Home() {
             </div>
             <div
               id="jamoa"
-              className="profile-corusel    w-full max-w-8xl mx-auto relative z-30 mt-[-15rem] mb-14 transform scale-70"
+              className="profile-corusel    w-full max-w-5xl mx-auto relative z-30 mt-[-17rem] mb-14 transform scale-70"
             >
               <ProfileCarousel />
             </div>
@@ -113,3 +113,14 @@ export default function Home() {
     </>
   );
 }
+
+
+
+
+ 
+
+ 
+
+
+
+ 

@@ -4,7 +4,7 @@
 *{
  
   box-sizing: border-box;
-}
+ }
 @custom-variant dark (&:is(.dark *));
 
 @keyframes spin {
@@ -298,6 +298,12 @@
 /* globals.css */
  .hero-section{
   position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  bottom: 27px;
+
+  
    
   }
 
@@ -306,23 +312,6 @@
     height: 500px;
      } */
 
-/* Mobil ekranlar uchun (640px dan kichik) */
-@media (max-width: 640px) {
-  .mobile-line-animation {
-    transform: scale(1.1); /* SVG’ni 10% kattalashtirish */
-     width: 500px; /* Desktopdagi kabi katta o‘lcham */
-     margin-top: 35px; /* Vertikal joylashuvni sozlash */
-   }
-    .hero-section{
-  position: relative;
-  bottom: 90px;
- }
- .profile-corusel{
-  position: relative;
-  bottom: 150px;
- }
- 
-}
 
  
 
@@ -493,3 +482,22 @@ html,body {
 
 
 
+
+
+/* Mobil ekranlar uchun (640px dan kichik) */
+@media (max-width: 640px) {
+  .mobile-line-animation {
+    transform: scale(1.1); /* SVG’ni 10% kattalashtirish */
+     width: 500px; /* Desktopdagi kabi katta o‘lcham */
+     margin-top: 40px; /* Vertikal joylashuvni sozlash */
+   }
+    .hero-section{
+  position: relative;
+  bottom: 50px;
+ }
+ .profile-corusel{
+  position: relative;
+  bottom: 100px;
+ }
+ 
+}

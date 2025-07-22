@@ -47,9 +47,9 @@ const ProfileCarousel = () => {
     if (diff > total / 2) position = diff - total;
     if (diff < -total / 2) position = diff + total;
 
-    const stepX = 330;      // Boshidagi 3ta card masofasi (position 0, ±1)
-    const middleX = 290;    // O'rtadagi 2ta card masofasi (position ±2)
-    const backStepX = 260;  // Oxiridagi 2ta card masofasi (position ±3)
+    const stepX = 320;      // Boshidagi 3ta card masofasi (position 0, ±1)
+    const middleX = 285;    // O'rtadagi 2ta card masofasi (position ±2)
+    const backStepX = 255;  // Oxiridagi 2ta card masofasi (position ±3)
     
     let translateX;
     if (Math.abs(position) <= 1) {
@@ -72,7 +72,7 @@ const ProfileCarousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[500px] lg:-top-45 flex items-center justify-around overflow-visible">
+    <div className="relative w-full h-[400px] lg:-top-45 flex items-center justify-around overflow-visible">
 
       <div className="relative flex items-center justify-around  gap-7">
         {profiles.map((profile, index) => (

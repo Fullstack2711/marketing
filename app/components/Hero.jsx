@@ -28,8 +28,8 @@ const Hero = () => {
                 <AnimatedBorderButton href="/connection" label={t('hero_button_connection')} />
               </div>
               {/* Main Title */}
-              <div className="flex-1 mx-8 xl:mx-12 h-56 flex items-center justify-center">
-                <h1 className="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-light tracking-wide leading-none">
+              <div className="flex-1 mx-6 xl:mx-12 h-56 flex items-center justify-center">
+                <h1 className="text-7xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-light tracking-wide  ">
                   {t('hero_title_line1')}
                   <br />
                   <span className="block">{t('hero_title_line2')}</span>
@@ -58,7 +58,7 @@ const Hero = () => {
             </div>
           </div>
           {/* Subtitle with Border */}
-          <div  style={{ paddingTop:'20px' }} className="relative  sm:-top-14 md:-top-14 lg:-top-16 xl:-top-15 flex flex-col items-center ">
+          <div   className="relative  sm:-top-14 md:-top-14 lg:-top-16 xl:-top-15 flex flex-col items-center ">
             <p className="text-sm sm:text-base md:text-lg text-gray-400 font-light tracking-wide max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl px-2">
               {t('hero_subtitle')}
             </p>
@@ -123,6 +123,8 @@ const Hero = () => {
             animation: inherit;
             filter: none;
             z-index: -1;
+                      filter: blur(5px);
+
           }
 
           :global(.fancyButton:hover) {
@@ -144,5 +146,4 @@ const Hero = () => {
 };
 
 export default Hero;
-
 
