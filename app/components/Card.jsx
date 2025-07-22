@@ -17,8 +17,7 @@ const ProfileCard = ({
             fill
             className="object-cover object-top"
           />
-           <div className="absolute top-0 left-0 w-full h-[140px] bg-gradient-to-b  "></div>
-         </div>
+          </div>
 
          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t  font-thin">
           <div className="text-white font-bastardo text-center space-y-2 pb-8">
@@ -89,7 +88,7 @@ const ProfileCard = ({
           background: inherit;
           border-radius: inherit;
           animation: inherit;
-          filter: blur(5px);
+          filter: blur(4px);
           z-index: -1;
         }
       `}</style>

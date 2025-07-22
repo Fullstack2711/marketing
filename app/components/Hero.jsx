@@ -25,7 +25,7 @@ const Hero = () => {
             <div className="relative flex items-center justify-between mb-12">
               {/* Left Button */}
               <div className="flex-shrink-0">
-                <AnimatedBorderButton href="/connection" label={t('hero_button_connection')} />
+                <AnimatedBorderButton href="#connection" label={t('hero_button_connection')} />
               </div>
               {/* Main Title */}
               <div className="flex-1 mx-6 xl:mx-12 h-56 flex items-center justify-center">
@@ -37,7 +37,7 @@ const Hero = () => {
               </div>
               {/* Right Button */}
               <div className="flex-shrink-0">
-                <AnimatedBorderButton href="/services" label={t('hero_button_services')} />
+                <AnimatedBorderButton href="#services" label={t('hero_button_services')} />
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@ const Hero = () => {
           <div className="block lg:hidden">
             {/* Main Title */}
             <div className="mb-8 sm:mb-10 h-40 flex items-center justify-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-wide leading-none px-2">
+              <h1 className="text-3xl sm:text-3xl md:text-5xl font-light tracking-wide leading-none px-2">
                 {t('hero_title_line1')}
                 <br />
                 <span className="block">{t('hero_title_line2')}</span>
@@ -53,13 +53,13 @@ const Hero = () => {
             </div>
             {/* Mobile Buttons */}
             <div className="flex flex-row sm:flex-row items-center justify-center gap-4 sm:gap-6 relative bottom-12 sm:mb-10">
-              <AnimatedBorderButton href="/connection" label={t('hero_button_connection')} />
-              <AnimatedBorderButton href="/services" label={t('hero_button_services')} />
+              <AnimatedBorderButton href="#connection" label={t('hero_button_connection')} />
+              <AnimatedBorderButton href="#services" label={t('hero_button_services')} />
             </div>
           </div>
           {/* Subtitle with Border */}
           <div   className="relative  sm:-top-14 md:-top-14 lg:-top-16 xl:-top-15 flex flex-col items-center ">
-            <p className="text-sm sm:text-base md:text-lg text-gray-400 font-light tracking-wide max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl px-2">
+            <p className="text-sm sm:text-base md:text-lg text-white font-light tracking-wide max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl px-2">
               {t('hero_subtitle')}
             </p>
             <div className="w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-50 mt-1" />
@@ -123,7 +123,7 @@ const Hero = () => {
             animation: inherit;
             filter: none;
             z-index: -1;
-                      filter: blur(5px);
+                      filter: blur(3px);
 
           }
 

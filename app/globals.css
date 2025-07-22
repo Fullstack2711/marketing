@@ -494,10 +494,10 @@ html,body {
     .hero-section{
   position: relative;
   bottom: 50px;
- }
+  }
  .profile-corusel{
   position: relative;
-  bottom: 100px;
+  bottom: 35px;
  }
  
 }

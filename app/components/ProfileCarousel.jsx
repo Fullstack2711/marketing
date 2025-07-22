@@ -49,7 +49,7 @@ const ProfileCarousel = () => {
 
     const stepX = 320;      // Boshidagi 3ta card masofasi (position 0, ±1)
     const middleX = 285;    // O'rtadagi 2ta card masofasi (position ±2)
-    const backStepX = 255;  // Oxiridagi 2ta card masofasi (position ±3)
+    const backStepX = 257;  // Oxiridagi 2ta card masofasi (position ±3)
     
     let translateX;
     if (Math.abs(position) <= 1) {

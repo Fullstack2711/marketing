@@ -17,14 +17,14 @@ const reviews = [
     username: "@jack",
     body: "I've never seen anything like this before. It's amazing. I love it.",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-    width: "w-80",
+    width: "w-62",
   },
   {
     name: "John",
     username: "@jonhn",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-    width: "w-150",
+    width: "w-82",
   },
   {
     name: "John",
@@ -38,14 +38,14 @@ const reviews = [
     username: "@jenny",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-    width: "w-80",
+    width: "w-52",
   },
   {
     name: "John",
     username: "@john2",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
-    width: "w-150",
+    width: "w-82",
   },
 ];
 
