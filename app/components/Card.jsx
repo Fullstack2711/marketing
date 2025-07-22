@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const ProfileCard = ({ 
   name = "Cineframe Khan", 
@@ -9,53 +8,97 @@ const ProfileCard = ({
   image = "/card.jpg"
 }) => {
   return (
-    <div className="relative w-[300px] h-[450px] rounded-3xl overflow-hidden shadow-xl border border-[#facc15]/20 p-px bg-black/10 group mx-6 my-4">
-      {/* Outer static border with new colors */}
-      <div className="absolute inset-0 rounded-3xl [mask:linear-gradient(black,transparent)]">
-        <div 
-          className="absolute inset-[-10%] w-[120%] h-[120%]"
-          style={{
-            background: 'linear-gradient(90deg, #F19470 0%, #B9D9FE 100%)'
-          }}
-        />
-      </div>
+    <div className="animated-border-card">
+      <div className="card-inner-content">
+        {/* Main Image with top and center transparency */}
+        <div className="relative w-full h-full">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover object-top"
+          />
+          {/* Top gradient for transparency */}
+          <div className="absolute top-0 left-0 w-full h-[150px] bg-gradient-to-b from-black/0 via-black/10 to-transparent"></div>
+          {/* Center gradient for more transparency */}
+          <div className="absolute top-[25%] left-0 w-full h-[50%] bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
+        </div>
 
-      {/* Animated border on hover with new colors */}
-      <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 [mask:linear-gradient(black,transparent)]">
-        <div 
-          className="absolute inset-[-10%] w-[120%] h-[120%] animate-[spin_4s_linear_infinite]"
-          style={{
-            background: 'conic-gradient(from 90deg at 50% 50%, #F19470 0%, #F19470 50%, #B9D9FE 50%, #B9D9FE 100%)'
-          }}
-        />
-      </div>
-
-      {/* Main Image with top and center transparency */}
-      <div className="relative w-full h-full rounded-[28px] overflow-hidden">
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className="object-cover object-top"
-        />
-        {/* Top gradient for transparency */}
-        <div className="absolute top-0 left-0 w-full h-[150px] bg-gradient-to-b from-black/0 via-black/10 to-transparent"></div>
-        {/* Center gradient for more transparency */}
-        <div className="absolute top-[25%] left-0 w-full h-[50%] bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
-      </div>
-
-     
-
-      {/* Bottom Info: with smoother gradient and no visible blur lines */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 font-thin  ">
-        <div className="text-white font-bastardo text-center space-y-2 pb-8">
-          <h3 className="text-2xl font-light">{name}</h3>
-          <p className="text-sm text-gray-300">
-            {info}
-          </p>
-           
+        {/* Bottom Info: with smoother gradient and no visible blur lines */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 font-thin">
+          <div className="text-white font-bastardo text-center space-y-2 pb-8">
+            <h3 className="text-2xl font-light">{name}</h3>
+            <p className="text-sm text-gray-300">
+              {info}
+            </p>
+          </div>
         </div>
       </div>
+      <style jsx>{`
+        @property --border-angle {
+          syntax: "<angle>";
+          inherits: true;
+          initial-value: 0deg;
+        }
+        @keyframes rotateBackground {
+          to { --border-angle: 360deg; }
+        }
+        .animated-border-card {
+          --border-color-1: #F09470;
+          --border-color-2: #B7D9FE;
+          --background: #000;
+          --border-radius: 1.5rem; /* rounded-3xl */
+          --border-angle: 0deg;
+          --border-width: 1px;
+          
+          position: relative;
+          width: 300px;
+          height: 450px;
+          margin: 1.5rem; /* Corresponds to mx-6 my-4 */
+          border-radius: var(--border-radius);
+          padding: var(--border-width);
+          
+          background-color: transparent;
+          background-image: conic-gradient(
+            from var(--border-angle) at 50% 50%,
+            var(--border-color-1) 0deg,
+            var(--border-color-1) 180deg,
+            var(--border-color-2) 180deg,
+            var(--border-color-2) 360deg
+          );
+          animation: rotateBackground 15s linear infinite;
+          transition: animation-duration 0.3s ease;
+          z-index: 0;
+          box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-xl */
+        }
+
+        .animated-border-card:hover {
+          animation-duration: 3s;
+        }
+
+        .animated-border-card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: inherit;
+          border-radius: inherit;
+          animation: inherit;
+          filter: blur(10px);
+          z-index: -1;
+        }
+
+        .card-inner-content {
+          background: var(--background);
+          border-radius: calc(var(--border-radius) - var(--border-width));
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+        }
+      `}</style>
     </div>
   );
 };
