@@ -79,11 +79,11 @@ const Hero = () => {
             text-decoration: none;
           }
           :global(.fancyButton) {
-            --border-color-1: #F09470;
-            --border-color-2: #B7D9FE; /* Brighter */
+            --border-color-1: #F09470CC;
+            --border-color-2: #B7D9FE33; /* Brighter */
             --background: #1A1A1A;
             --foreground: #D1D5DB;
-            --border-radius: 2em;
+            --border-radius: 2rem;
             --border-angle: 0deg;
             --border-width: 1px;
             
@@ -100,16 +100,10 @@ const Hero = () => {
               from var(--border-angle) at 50% 50%,
               /* Orange Segment */
               var(--border-color-1) 0deg,
-              var(--border-color-1) 175deg,
-              /* Gap 1 */
-              transparent 175deg,
-              transparent 185deg,
-              /* Blue Segment */
-              var(--border-color-2) 185deg,
-              var(--border-color-2) 355deg,
-              /* Gap 2 */
-              transparent 355deg,
-              transparent 360deg
+              var(--border-color-1) 170deg,
+              var(--border-color-2) 190deg,
+              var(--border-color-2) 350deg,
+              var(--border-color-1) 360deg
             );
             animation: rotateBackground 8s linear infinite;
             position: relative;
@@ -127,7 +121,7 @@ const Hero = () => {
             background-image: inherit;
             border-radius: inherit;
             animation: inherit;
-            filter: blur(10px);
+            filter: none;
             z-index: -1;
           }
 

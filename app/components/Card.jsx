@@ -10,22 +10,18 @@ const ProfileCard = ({
   return (
     <div className="animated-border-card">
       <div className="card-inner-content">
-        {/* Main Image with top and center transparency */}
-        <div className="relative w-full h-full">
+         <div className="relative w-full h-full">
           <Image
             src={image}
             alt={name}
             fill
             className="object-cover object-top"
           />
-          {/* Top gradient for transparency */}
-          <div className="absolute top-0 left-0 w-full h-[150px] bg-gradient-to-b from-black/0 via-black/10 to-transparent"></div>
-          {/* Center gradient for more transparency */}
-          <div className="absolute top-[25%] left-0 w-full h-[50%] bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
+           <div className="absolute top-0 left-0 w-full h-[140px] bg-gradient-to-b from-black/0 via-black/10 to-transparent"></div>
+           <div className="absolute top-[25%] left-0 w-full h-[50%] bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
         </div>
 
-        {/* Bottom Info: with smoother gradient and no visible blur lines */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 font-thin">
+         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/30 to-black/0 font-thin">
           <div className="text-white font-bastardo text-center space-y-2 pb-8">
             <h3 className="text-2xl font-light">{name}</h3>
             <p className="text-sm text-gray-300">

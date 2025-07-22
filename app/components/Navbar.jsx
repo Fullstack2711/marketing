@@ -57,36 +57,37 @@ function Navbar() {
               </div>
 
               {/* Desktop Navigation Links */}
-              <div className="hidden md:flex justify-center flex-grow">
-                <div className="navContainer">
-                  <div className="innerNav">
-                    <Link
-                      href="/jamoa"
-                      className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
-                    >
-                      {t("nav_team")}
-                    </Link>
-                    <Link
-                      href="/portfolio"
-                      className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
-                    >
-                      {t("nav_portfolio")}
-                    </Link>
-                    <Link
-                      href="/xizmatlar"
-                      className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
-                    >
-                      {t("nav_services")}
-                    </Link>
-                    <button
-                      onClick={handleOpenModal}
-                      className="text-sm text-white/90 hover:text-white transition-colors duration-200 font-medium whitespace-nowrap"
-                    >
-                      {t("nav_contact")}
-                    </button>
-                  </div>
-                </div>
-              </div>
+             <div className="hidden md:flex justify-center flex-grow">
+  <div className="navContainer px-1 py-1 rounded-full">
+    <div className="innerNav">
+      <Link
+        href="/jamoa"
+        className="navLink"
+      >
+        {t("nav_team")}
+      </Link>
+      <Link
+        href="/portfolio"
+        className="navLink"
+      >
+        {t("nav_portfolio")}
+      </Link>
+      <Link
+        href="/xizmatlar"
+        className="navLink"
+      >
+        {t("nav_services")}
+      </Link>
+      <button
+        onClick={handleOpenModal}
+        className="navLink"
+      >
+        {t("nav_contact")}
+      </button>
+    </div>
+  </div>
+</div>
+
 
               {/* Desktop Contact Info */}
               <div className="hidden md:flex flex-1 justify-end items-center gap-4">
@@ -206,61 +207,48 @@ function Navbar() {
           }
         }
 
-        .navContainer {
-          --border-color-1: rgba(145, 145, 145, 0.3);
-          --border-color-2: rgb(218, 217, 217);
-          --background: #8f8f8fa8;
-          --foreground: #d1d5db00;
-          --border-size: 1px;
-          --border-radius: 1.5rem;
-
-          position: relative;
-          padding: var(--border-size);
-          border-radius: var(--border-radius);
-          background: linear-gradient(var(--background), var(--background))
-              padding-box,
-            conic-gradient(
-                from var(--angle),
-                var(--border-color-1),
-                var(--border-color-2),
-                var(--border-color-1)
-              )
-              border-box;
-          border: var(--border-size) solid transparent;
-          animation: rotateGradient 3s linear infinite;
-          transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .navContainer:hover {
-          transform: scale(1.02);
-          opacity: 1;
-        }
-
-        .innerNav {
-          display: flex;
-          align-items: center;
-          gap: 3rem;
-          padding: 0.5rem 2rem;
-          border-radius: calc(var(--border-radius) - var(--border-size));
-          background: var(--background);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          font-family: "PP Neue Montreal", sans-serif;
-        }
-          
-
-
-
-
-        @property --border-angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 0deg;
+.navContainer {
+  --border-color-1: rgba(255, 255, 255, 0.4);
+  --border-color-2: rgba(255, 255, 255, 0.1);
+  --angle: 0deg;
+  background:
+    linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+    conic-gradient(from var(--angle), var(--border-color-1), var(--border-color-2), var(--border-color-1)) border-box;
+  animation: rotateGradient 5s linear infinite;
+  border: 0.5 solid transparent;
+  border-size: 1px;
+  border-radius: 9999px;
+  position: relative;
+  
 }
 
-@keyframes rotateBorder {
+.innerNav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.3rem 1rem;
+  border-radius: 9999px;
+  background: #1a1a1a;
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  font-family: "PP Neue Montreal", sans-serif;
+}
+
+.navLink {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+@keyframes rotateGradient {
   to {
-    --border-angle: 360deg;
+    --angle: 360deg;
   }
 }
 
