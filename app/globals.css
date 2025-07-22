@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+ 
 
 *{
  
@@ -274,7 +275,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: 'PP Neue Montreal', sans-serif;
+  font-family: "Helvetica Neue" ;
 }
 
 @font-face {
@@ -500,4 +501,20 @@ html,body {
   bottom: 35px;
  }
  
+
+
+
+
+}
+
+
+.innn{
+  font-family: "PP Neue Montreal", sans-serif;
+          font-weight: 300;
+          font-style: normal;
+          font-size: 30.8px;
+          line-height: 1;
+          letter-spacing: 0;
+          transition: color 0.3s ease, background 0.3s ease;
+          font-variant-ligatures: common-ligatures;
 }

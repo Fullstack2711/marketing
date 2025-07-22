@@ -34,7 +34,7 @@ function InfoCompany() {
   );
 
   return (
-    <section className="w-full bg-transparent text-gray-300 py-16 px-6 sm:px-8 md:px-16 overflow-x-hidden">
+    <section className="innn   w-full bg-transparent text-gray-300 py-16 px-6 sm:px-8 md:px-16 overflow-x-hidden font-light">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Side: Text */}
         <div

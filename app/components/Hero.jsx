@@ -80,7 +80,7 @@ const Hero = () => {
           }
           :global(.fancyButton) {
             --border-color-1: #F09470CC;
-            --border-color-2: #B7D9FE33; /* Brighter */
+            --border-color-2: #a4f3ff; /* Brighter */
             --background: #1A1A1A;
             --foreground: #D1D5DB;
             --border-radius: 2rem;
