@@ -83,7 +83,7 @@ export default function Home() {
             </div>
             <div
               id="jamoa"
-              className="profile-corusel    w-full max-w-5xl mx-auto relative z-30 mt-[-17rem] mb-14 transform scale-70"
+              className="profile-corusel    w-full max-w-5xl mx-auto relative z-30 mt-[-17rem] mb-14 transform scale-65"
             >
               <ProfileCarousel />
             </div>
