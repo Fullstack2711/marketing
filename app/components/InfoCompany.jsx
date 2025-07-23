@@ -3,7 +3,7 @@ import React from "react";
 import { useLanguage } from "../context/LanguageContext";
 import Link from "next/link";
 import Image from "next/image";
-
+ 
 function InfoCompany() {
   const { t } = useLanguage();
 
@@ -34,48 +34,45 @@ function InfoCompany() {
   );
 
   return (
-    <section className="innn   w-full bg-transparent text-gray-300 py-16 px-6 sm:px-8 md:px-16 overflow-x-hidden font-light">
+    <section className="font-ppneue w-full   text-white text-light py-16 px-6 sm:px-8 md:px-16 overflow-x-hidden">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Side: Text */}
         <div
-          className="space-y-6 text-[16px] leading-[26px]"
-          style={{
-            fontFamily: "PP Neue Montreal",
-            fontWeight: "400",
-          }}
+          className="space-y-6 text-[18px] leading-[26px] font-extralight"
+          
         >
-          <h2 className="text-2xl font-light text-white">
+          <h2 className="text-2xl  font-ppneue text-white">
             {t("info_company_title", "Result marketing agency")}
           </h2>
-          <p className="font-light">
+          <p>
             {t(
               "info_company_p1",
-              "Result Marketing — bu shaxsiy brendlar va raqamli marketing bo'yicha ixtisoslashgan agentlik. Biz 6 yildan buyon brendlarning asl mohiyatini ochamiz, ularni shakllantiramiz va odamlarga to'g'ri yetkazamiz."
+              "Result Marketing - bu shaxsiy brendlar va raqamli marketing boʻyicha ixtisoslashgan agentlik. Biz 6 yildan buyon brendlarning asl mohiyatini ochamiz, ularni shakllantiramiz va odamlarga to'g'ri yetkazamiz."
             )}
           </p>
-          <p className="font-light">
+          <p>
             {t(
               "info_company_p2",
-              "Tahlil, strategiya, kontent, dizayn va kommunikatsiya bizning asosiy kuchli tomonlarimiz. Har bir xizmatimiz brend o‘sishini tezlashtirish va haqiqiy natija berish uchun mo‘ljallangan."
+              "Tahlil, strategiya, kontent, dizayn va kommunikatsiya bizning asosiy kuchli tomonlarimiz. Har bir xizmatimiz brend o'sishini tezlashtirish va haqiqiy natija berish uchun mo'ljallangan."
             )}
           </p>
 
           {/* Contact Info */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 pt-4">
             <div>
-              <h3 className="font-light text-gray-400 mb-1">
+              <h3 className="text-gray-400 mb-1">
                 {t("info_company_contact_label", "Aloqa uchun:")}
               </h3>
               <p className="text-white">+998 95 419 33 33</p>
             </div>
             <div>
-              <h3 className="font-light text-gray-400 mb-1">
+              <h3 className="text-gray-400 mb-1">
                 {t("info_company_gmail_label", "Gmail:")}
               </h3>
               <p className="text-white">resultmarketing.uz@gmail.com</p>
             </div>
             <div className="sm:col-span-2">
-              <h3 className="font-light text-gray-400 mb-1">
+              <h3 className="text-gray-400 mb-1">
                 {t("info_company_address_label", "Manzil:")}
               </h3>
               <p className="text-white">
@@ -99,11 +96,11 @@ function InfoCompany() {
 
       {/* Footer: Icons for Desktop Only */}
       <footer className="w-full pt-10 pb-4 mt-10 ">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-end gap-35">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-end gap-25">
           <div className="hidden md:flex items-center gap-4">
             <SocialIcons />
           </div>
-          <p className="text-sm text-gray-400 text-center sm:text-right">
+          <p className="text-sm font-ppneue text-[18px] text-white text-center sm:text-right">
             {t("footer_powered_by", "The site is powered by Result")}
           </p>
         </div>

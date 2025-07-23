@@ -9,10 +9,8 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 6s linear infinite',
       },
-            fontFamily: {
-        montreal: ['"PP Neue Montreal"', 'sans-serif'],
-              bastardo: ['"Bastardo Grotesk"', 'sans-serif'],
-
+       fontFamily: {
+        ppneue: ['"PP Neue Montreal"', 'sans-serif'],
       },
       content: [
   "./app/**/*.{ts,tsx}",
