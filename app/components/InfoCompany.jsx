@@ -100,7 +100,7 @@ function InfoCompany() {
           <div className="hidden md:flex items-center gap-4">
             <SocialIcons />
           </div>
-          <p className="text-sm font-ppneue text-[18px] text-white text-center sm:text-right">
+          <p className=" glow-text  text-sm font-ppneue text-[18px] text-white text-center sm:text-right">
             {t("footer_powered_by", "The site is powered by Result")}
           </p>
         </div>

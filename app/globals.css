@@ -538,3 +538,23 @@ html,body {
     --border-angle: 360deg;
   }
 }
+
+
+.glow-text {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 0 0 5px #fff, 0 0 10px rgb(251, 255, 224), 0 0 20px #f0c;
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 5px #fff, 0 0 10px rgb(251, 255, 224), 0 0 20px rgb(251, 255, 224);
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 2px rgb(251, 255, 224), 0 0 5px rgb(251, 255, 224), 0 0 10px rgb(251, 255, 224);
+  }
+}
