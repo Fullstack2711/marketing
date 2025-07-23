@@ -80,7 +80,7 @@ const Hero = () => {
           }
           :global(.fancyButton) {
             --border-color-1: #F09470CC;
-            --border-color-2: #a4f3ff; /* Brighter */
+            --border-color-2: #d0dddf; /* Brighter */
             --background: #1A1A1A;
             --foreground: #D1D5DB;
             --border-radius: 2rem;
@@ -101,8 +101,8 @@ const Hero = () => {
               /* Orange Segment */
               var(--border-color-1) 0deg,
               var(--border-color-1) 170deg,
-              var(--border-color-2) 190deg,
-              var(--border-color-2) 350deg,
+              var(--border-color-2) 200deg,
+              var(--border-color-2) 340deg,
               var(--border-color-1) 360deg
             );
             animation: rotateBackground 8s linear infinite;
@@ -121,9 +121,8 @@ const Hero = () => {
             background-image: inherit;
             border-radius: inherit;
             animation: inherit;
-            filter: none;
             z-index: -1;
-                      filter: blur(3px);
+            filter: blur(3px);
 
           }
 
