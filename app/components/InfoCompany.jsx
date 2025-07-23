@@ -91,13 +91,7 @@ function InfoCompany() {
 
           {/* Video or Image */}
           <div className="bg-white rounded-3xl h-[350px] sm:h-[450px] w-full overflow-hidden">
-  <iframe
-    src="https://assets.pinterest.com/ext/embed.html?id=4644405860530309"
-    className="w-full h-full"
-    frameBorder="0"
-    scrolling="no"
-    autoplay="true"
-  ></iframe>
+  
 </div>
 
         </div>
