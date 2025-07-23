@@ -54,6 +54,15 @@ function Navbar() {
     setIsModalOpen(true);
   };
 
+  const handleScrollTo = (e, id) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <header className={`w-full text-white fixed top-0 left-0 z-50 transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -82,30 +91,34 @@ function Navbar() {
              <div className="hidden md:flex justify-center flex-grow">
   <div className="navContainer px-1 py-1 rounded-full">
     <div className="innerNav">
-      <Link
-        href="/jamoa"
+      <a
+        href="#"
         className="navLink"
+        onClick={(e) => handleScrollTo(e, 'jamoa')}
       >
         {t("nav_team")}
-      </Link>
-      <Link
-        href="/portfolio"
+      </a>
+      <a
+        href="#portfolio"
         className="navLink"
+        onClick={(e) => handleScrollTo(e, 'portfolio')}
       >
         {t("nav_portfolio")}
-      </Link>
-      <Link
-        href="/xizmatlar"
+      </a>
+      <a
+        href="#xizmatlar"
         className="navLink"
+        onClick={(e) => handleScrollTo(e, 'xizmatlar')}
       >
         {t("nav_services")}
-      </Link>
-      <button
-        onClick={handleOpenModal}
+      </a>
+      <a
+        href="#contact"
         className="navLink"
+        onClick={(e) => handleScrollTo(e, 'contact')}
       >
         {t("nav_contact")}
-      </button>
+      </a>
     </div>
   </div>
 </div>
@@ -154,13 +167,14 @@ function Navbar() {
      }}
 >
             {/* Bog'lanish buttoni eng tepadagi chap burchakda */}
-            <button
-              onClick={handleOpenModal}
+            <a
+              href="#contact"
+              onClick={(e) => handleScrollTo(e, 'contact')}
               className="absolute top-4 left-4 px-4 py-1.5 border border-white/30 rounded-full text-base text-white bg-transparent backdrop-blur-md"
               style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
             >
               {t("nav_contact")}
-            </button>
+            </a>
             <button
               onClick={() => setIsMenuOpen(false)}
               className="absolute top-4 right-4 text-white text-3xl px-2"
@@ -169,33 +183,33 @@ function Navbar() {
               &times;
             </button>
             <div className="flex flex-col justify-center items-center flex-1 gap-10">
-              <Link
+              <a
                 href="#jamoa"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleScrollTo(e, 'jamoa')}
               >
                 {t("nav_team")}
-              </Link>
-              <Link
+              </a>
+              <a
                 href="#portfolio"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleScrollTo(e, 'portfolio')}
               >
                 {t("nav_portfolio")}
-              </Link>
-              <Link
+              </a>
+              <a
                 href="#xizmatlar"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleScrollTo(e, 'xizmatlar')}
               >
                 {t("nav_services")}
-              </Link>
-              <span className="text-xl text-white font-light" style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}>
+              </a>
+              <a href="#contact" onClick={(e) => handleScrollTo(e, 'contact')} className="text-xl text-white font-light" style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}>
                 {t("nav_contact")}
-              </span>
+              </a>
               <span className="text-base text-white/80 font-light mt-6" style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}>
                 +998 95 419 33 33
               </span>

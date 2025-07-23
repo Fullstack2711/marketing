@@ -90,7 +90,7 @@ export default function Home() {
           </div>
 
           {/* CONTENT qismi */}
-          <div className="marquee      bg-[#111111]">
+          <div id="portfolio" className="marquee      bg-[#111111]">
             <MarqueeDemo />
           </div>
           <div id="xizmatlar" className="services">
