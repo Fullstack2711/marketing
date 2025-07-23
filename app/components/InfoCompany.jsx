@@ -97,7 +97,7 @@ function InfoCompany() {
               loop
               muted
               className="object-cover mx-auto  h-full "
-              style={{ width: "90%", height: "100%" , borderRadius: "30px", border: "1px solid #fff" }}
+              style={{ width: "90%", height: "100%" , borderRadius: "35px", border: "1px solid #fff" }}
             ></video>
           </div>
         </div>
