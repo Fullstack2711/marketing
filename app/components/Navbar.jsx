@@ -94,7 +94,7 @@ function Navbar() {
       <a
         href="#"
         className="navLink"
-        onClick={(e) => handleScrollTo(e, 'jamoa')}
+        onClick={(e) => handleScrollTo(e, '')}
       >
         {t("nav_team")}
       </a>
@@ -184,7 +184,7 @@ function Navbar() {
             </button>
             <div className="flex flex-col justify-center items-center flex-1 gap-10">
               <a
-                href="#jamoa"
+                href="#"
                 className="text-xl text-white font-light"
                 style={{ fontFamily: '"PP Neue Montreal", sans-serif' }}
                 onClick={(e) => handleScrollTo(e, 'jamoa')}
@@ -256,6 +256,7 @@ function Navbar() {
   backdrop-filter: blur(10px);
   opacity: 1;
   font-family: "PP Neue Montreal", sans-serif;
+  opacity: 100;
 }
 
 .navLink {

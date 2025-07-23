@@ -17,7 +17,7 @@ function InfoCompany() {
       <Image
         src={src}
         alt={alt}
-        width={25}
+        width={45}
         height={25}
         className="w-6 h-6 sm:w-8 sm:h-8"
       />
@@ -90,10 +90,16 @@ function InfoCompany() {
           </div>
 
           {/* Video or Image */}
-          <div className="bg-white rounded-3xl h-[350px] sm:h-[450px] w-full overflow-hidden">
-  
-</div>
-
+          <div className=" rounded-4xl h-[350px] sm:h-[480px] w-full overflow-hidden relative px-4 py-6">
+            <video
+              src="/cd.mp4"
+              autoPlay
+              loop
+              muted
+              className="object-cover mx-auto  h-full "
+              style={{ width: "90%", height: "100%" , borderRadius: "30px", border: "1px solid #fff" }}
+            ></video>
+          </div>
         </div>
       </div>
 
