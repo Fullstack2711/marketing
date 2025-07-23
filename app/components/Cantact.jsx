@@ -82,13 +82,12 @@ const OrderForm = () => {
         {/* Left Side Title */}
         <div className="text-start z-20 relative px-2 md:px-0">
           <h1 className="hidden md:block text-4xl sm:text-5xl md:text-6xl font-normal leading-tight text-white">
-  {t('order_form_title')}
-</h1>
-
+            {t('order_form_title')}
+          </h1>
         </div>
 
         {/* Right Side Form */}
-<div className="w-full max-w-md md:max-w-lg lg:max-w-xl backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-[#F09470] z-10 relative bg-[#FFFFFF33] mx-auto">
+        <div className="w-full max-w-md md:max-w-lg lg:max-w-xl backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-[#F09470] z-10 relative bg-[#FFFFFF33] mx-auto">
           <h2 className="text-xl sm:text-2xl font-light mb-8 text-center text-white md:display:none">
             {t('order_form_subtitle')}
           </h2>
@@ -105,8 +104,11 @@ const OrderForm = () => {
             </div>
           )}
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-8" onSubmit={handleSubmit}>
             <InputWrapper>
+              <label htmlFor="name" className="block text-sm text-white    relative bottom-6">
+                {t('order_form_name_label')}
+              </label>
               <input
                 id="name"
                 name="name"
@@ -114,12 +116,14 @@ const OrderForm = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="inputStyle w-full placeholder-cyan-50"
-                placeholder={t('order_form_name_label')}
+                className="inputStyle w-full"
               />
             </InputWrapper>
 
             <InputWrapper>
+              <label htmlFor="contact" className="block text-sm text-white relative bottom-6">
+                {t('order_form_contact_label')}
+              </label>
               <input
                 id="contact"
                 name="contact"
@@ -127,12 +131,14 @@ const OrderForm = () => {
                 value={formData.contact}
                 onChange={handleInputChange}
                 required
-                className="inputStyle w-full placeholder-cyan-50"
-                placeholder={t('order_form_contact_label')}
+                className="inputStyle w-full"
               />
             </InputWrapper>
 
             <InputWrapper>
+              <label htmlFor="message" className="block text-sm text-white relative bottom-6">
+                {t('order_form_message_label')}
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -140,8 +146,7 @@ const OrderForm = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 required
-                className="inputStyle resize-none w-full placeholder-cyan-50"
-                placeholder={t('order_form_message_label')}
+                className="inputStyle resize-none w-full"
               ></textarea>
             </InputWrapper>
 

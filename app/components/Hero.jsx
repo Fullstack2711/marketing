@@ -80,7 +80,7 @@ const Hero = () => {
           }
           :global(.fancyButton) {
             --border-color-1: #F09470CC;
-            --border-color-2: #d0dddf; /* Brighter */
+            --border-color-2: #B7D9FE33; /* Brighter */
             --background: #1A1A1A;
             --foreground: #D1D5DB;
             --border-radius: 2rem;
@@ -97,7 +97,7 @@ const Hero = () => {
             border-radius: var(--border-radius);
             background-color: transparent;
             background-image: conic-gradient(
-              from var(--border-angle) at 50% 50%,
+              from var(--border-angle) at 60% 40%,
               /* Orange Segment */
               var(--border-color-1) 0deg,
               var(--border-color-1) 170deg,

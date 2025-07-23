@@ -458,20 +458,21 @@
 
 .inputStyle {
   width: 100%;
+  
   background: transparent;
   border: none;
   outline: none;
-  padding: 0.75rem 1rem;
+  padding: 0.25rem 1rem;
   color: white;
   font-weight: 200;
   border-radius: inherit;
   position: relative;
-  bottom: 37px;
+  bottom: 20px;
   
 }
 .inputStylebtn{
   position: relative;
-    padding: 0.75rem 1rem;  
+    padding: 1rem 1rem;
    
 
 }
