@@ -8,6 +8,8 @@ import Image from 'next/image';
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
@@ -27,6 +29,26 @@ function Navbar() {
     };
   }, [isMenuOpen, isModalOpen]);
 
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== 'undefined') {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+          setShowNav(false);
+        } else {
+          setShowNav(true);
+        }
+        setLastScrollY(window.scrollY);
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   const handleOpenModal = () => {
     setIsMenuOpen(false);
     setIsModalOpen(true);
@@ -34,7 +56,7 @@ function Navbar() {
 
   return (
     <>
-      <header className="w-full text-white absolute top-0 left-0 z-50">
+      <header className={`w-full text-white fixed top-0 left-0 z-50 transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
         {/* Logo va container faqat menu yopiq bo'lsa ko'rsatiladi */}
         {!isMenuOpen && (
           <div className="container mx-auto px-6 py-4">
@@ -181,8 +203,8 @@ function Navbar() {
           </div>
         )}
         {/* Logo */}
-        {!isMenuOpen && (
-          <div className="flex justify-center mb-6">
+        {!isMenuOpen && lastScrollY < 50 && (
+          <div className="flex justify-center mb-6 transition-opacity duration-300">
             <Image
               src="/Logo.png"
               alt="Result Logo"
