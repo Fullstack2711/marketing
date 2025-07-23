@@ -195,28 +195,16 @@ function Navbar() {
       </header>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <style jsx>{`
-        @property --angle {
-          syntax: "<angle>";
-          inherits: true;
-          initial-value: 0deg;
-        }
-
-        @keyframes rotateGradient {
-          to {
-            --angle: 360deg;
-          }
-        }
 
 .navContainer {
-  --border-color-1: rgba(255, 255, 255, 0.4);
-  --border-color-2: rgba(255, 255, 255, 0.1);
+  --border-color-1: rgba(240, 240, 240, 0.9);
+  --border-color-2: rgba(255, 255, 255, 0.3);
   --angle: 0deg;
   background:
-    linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+    linear-gradient(#999999, #999999) padding-box,
     conic-gradient(from var(--angle), var(--border-color-1), var(--border-color-2), var(--border-color-1)) border-box;
   animation: rotateGradient 5s linear infinite;
-  border: 0.5 solid transparent;
-  border-size: 1px;
+  border: 1px solid transparent;
   border-radius: 9999px;
   position: relative;
   
@@ -226,31 +214,24 @@ function Navbar() {
   display: flex;
   align-items: center;
   gap: 3rem;
-  padding: 0.3rem 1rem;
+  padding: 0.2rem 1rem;
   border-radius: 9999px;
-  background: #1a1a1a;
+  background: transparent;
   backdrop-filter: blur(10px);
   opacity: 1;
   font-family: "PP Neue Montreal", sans-serif;
 }
 
 .navLink {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.9);
+ 
+  color: white;
   transition: color 0.3s ease;
   white-space: nowrap;
-  font-weight: 500;
+  font-weight: 400;
 }
 
-.navLink:hover {
-  color: white;
-}
+ 
 
-@keyframes rotateGradient {
-  to {
-    --angle: 360deg;
-  }
-}
 
 .animated-border-btn {
   --border-angle: 0deg;
