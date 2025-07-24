@@ -23,7 +23,7 @@ const reviews = [
     name: "John",
     username: "@jonhn",
     body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+    img: "/portfolio/portfolio1.png",
     width: "w-82",
   },
   {
@@ -53,22 +53,20 @@ const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({ img, name, username, body, width }) => {
-  return (
+ return (
     <div
       className={cn(
-        "h-48 relative overflow-hidden rounded-xl shadow-md border border-gray-800 bg-black cursor-pointer",
+        "h-48 relative overflow-hidden rounded-xl shadow-md border border-gray-800 cursor-pointer group",
         width
       )}
     >
       <img
         src={img}
         alt="Review image"
-        className="w-full h-full object-cover opacity-60"
+        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
       />
       <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
-        {/* <p className="text-sm font-semibold">{name}</p>
-        <p className="text-xs text-gray-300">{username}</p> */}
-        {/* <p className="text-sm mt-2">{body}</p> */}
+        {/* Content */}
       </div>
     </div>
   );
