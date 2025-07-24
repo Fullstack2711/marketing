@@ -237,12 +237,13 @@ function Navbar() {
   --border-color-2: rgba(255, 255, 255, 0.3);
   --angle: 0deg;
   background:
-    linear-gradient(#999999, #999999) padding-box,
+    linear-gradient(#424145FF, #424145FF) padding-box,
     conic-gradient(from var(--angle), var(--border-color-1), var(--border-color-2), var(--border-color-1)) border-box;
   animation: rotateGradient 5s linear infinite;
   border: 1px solid transparent;
   border-radius: 9999px;
   position: relative;
+  opasity: 1;
   
 }
 
@@ -250,12 +251,11 @@ function Navbar() {
   display: flex;
   align-items: center;
   gap: 3rem;
-  padding: 0.2rem 1rem;
+  padding: 0.1rem 1rem;
   border-radius: 9999px;
-  background: transparent;
+  background: #424145FF;
   backdrop-filter: blur(10px);
-  opacity: 1;
-  font-family: "PP Neue Montreal", sans-serif;
+   font-family: "PP Neue Montreal", sans-serif;
   opacity: 100;
 }
 
