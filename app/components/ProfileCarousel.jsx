@@ -11,7 +11,7 @@ const ProfileCarousel = () => {
     { id: 2, image: "/img2.jpg", name:'Sirojiddin. Kh', info:'Marketolog 2 yil tajriba.Loyiha boshqaruvchi.' },
     { id: 3, image: "/img3.jpg" , name:'Ismailov. I', info:'Grafik Dizayner 3.5 yil tajriba.Vizual uchun javobgar shaxs.' },
     { id: 4, image: "/tg.jpg"   , name:'Shohrux. T', info:'Project manager.Shaxsiy brend Prodyuseri.' },
-    { id: 5, image: "/img5.jpg" , name:'Хudoyor. lv', info:'Montajor 1 yil tajriba.Aeleoon.' },
+    { id: 5, image: "/img5.jpg" , name:'Хudoyor. lv', info:'Montajor 1 yil tajriba Aeleoon.' },
     { id: 6, image: "/tg.jpg"   , name:'Shohrux. T', info:'Project manager.Shaxsiy brend Prodyuseri.' },
     { id: 7, image: "/imgg.png" , name:'Umid. Kh', info:'Videograf 1 yil tajriba.Streamer.' },
   ];
@@ -82,7 +82,7 @@ const ProfileCarousel = () => {
             style={getTransform(index)}
             onClick={() => handleCardClick(index)}
           >
-            <ProfileCard image={profile.image} name ={profile.name} info ={profile.info}/>
+            <ProfileCard image={profile.image} name ={profile.name}  info ={profile.info}/>
           </div>
         ))}
       </div>
