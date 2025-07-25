@@ -17,7 +17,7 @@ const reviews = [
     name: "John",
     username: "@jonhn",
     body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "/portfolio1.png",
+    img: "/Portfolio1.png",
     width: "w-82",
   },
 
