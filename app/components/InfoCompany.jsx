@@ -24,8 +24,15 @@ function InfoCompany() {
     </Link>
   );
 
+  const handleLocation = () => {
+    window.open(
+      "https://maps.app.goo.gl/cBU8NbFvBkjH6UbLA"
+    );
+  };
+
+
   const SocialIcons = () => (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-2">
       <SocialIcon href="#" src="/BE_Logo.svg" alt="Behance" />
       <SocialIcon href="#" src="/Telegram_Logo.svg" alt="Telegram" />
       <SocialIcon href="#" src="/Instagram_Logo.svg" alt="Instagram" />
@@ -34,7 +41,7 @@ function InfoCompany() {
   );
 
   return (
-    <section className="font-ppneue w-full   text-white text-light py-16 px-6 sm:px-8 md:px-16 overflow-x-hidden">
+    <section className="font-ppneue w-full   text-white text-light py-16 px-6 sm:px-8 md:px-16 overflow-x-hidden ">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Side: Text */}
         <div
@@ -90,7 +97,7 @@ function InfoCompany() {
           </div>
 
           {/* Video or Image */}
-          <div className=" rounded-4xl h-[350px] sm:h-[480px] w-full overflow-hidden relative px-4 py-6">
+          <div onClick={handleLocation} className=" rounded-4xl h-[350px] sm:h-[480px] w-full overflow-hidden relative px-4 py-6 cursor-pointer">
             <video
               src="/cd.mp4"
               autoPlay
@@ -105,7 +112,7 @@ function InfoCompany() {
 
       {/* Footer: Icons for Desktop Only */}
       <footer className="w-full pt-10 pb-4 mt-10 ">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-end gap-25">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-end gap-20">
           <div className="hidden md:flex items-center gap-4">
             <SocialIcons />
           </div>
