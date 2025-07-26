@@ -45,7 +45,7 @@ function InfoCompany() {
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Side: Text */}
         <div
-          className="space-y-6 text-[18px] leading-[26px] font-extralight"
+          className="space-y-6 text-[18px] leading-[26px] "
           
         >
           <h2 className="text-2xl  font-ppneue text-white">
@@ -111,16 +111,17 @@ function InfoCompany() {
       </div>
 
       {/* Footer: Icons for Desktop Only */}
-      <footer className="w-full pt-10 pb-4 mt-10 ">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-end gap-20">
-          <div className="hidden md:flex items-center gap-4">
-            <SocialIcons />
-          </div>
-          <p className=" glow-text  text-sm font-ppneue text-[18px] text-white text-center sm:text-right">
-            {t("footer_powered_by", "The site is powered by Result")}
-          </p>
-        </div>
-      </footer>
+      <footer className="w-full pt-10 pb-4 mt-10 relative">
+  <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-15 lg:relative left-10">
+    <div className="hidden md:flex items-center gap-4">
+      <SocialIcons />
+    </div>
+    <p className="glow-text font-ppneue text-[18px] text-white text-center">
+      {t("footer_powered_by", "The site is powered by Result")}
+    </p>
+  </div>
+</footer>
+
     </section>
   );
 }

@@ -5,6 +5,7 @@ import Image from 'next/image';
 const ProfileCard = ({ 
   name = "Cineframe Khan", 
   info = "A videographer is a professional who captures moving images using a video camera.", 
+  infoPast = "Videographer with a passion for storytelling through the lens.",
   image = "/card.jpg"
 }) => {
   return (
@@ -20,10 +21,13 @@ const ProfileCard = ({
           </div>
 
          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t   ">
-          <div className="text-white font-bastardo text-center space-y-2 pb-8">
-            <h3 className="text-2xl  ">{name}</h3> <br />
+          <div className="text-white font-bastardo text-center space-y-2 pb-4">
+            <h3 className="text-2xl  ">{name}</h3>  
             <p className="text-sm text-gray-300">
               {info}
+            </p>
+            <p className=" text-gray-300 relative -top-2 ">
+              {infoPast}
             </p>
           </div>
         </div>

@@ -1,20 +1,23 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import ProfileCard from './Card'; // Bu alohida card komponent
+import { useLanguage } from '../context/LanguageContext';
 
 const ProfileCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(2); // Start in the middle
   const intervalRef = useRef(null);
+  const {t} =  useLanguage()
 
-  const profiles = [
-    { id: 1, image: "/img1.jpg", name:'Shohijaxon.J', info :'Result asoschisi. Marketolog 7 yil tajriba.Shaxsiy brend Prodyuser.' },
-    { id: 2, image: "/img2.jpg", name:'Sirojiddin. Kh', info:'Marketolog 2 yil tajriba.Loyiha boshqaruvchi.' },
-    { id: 3, image: "/img3.jpg" , name:'Ismailov. I', info:'Grafik Dizayner 3.5 yil tajriba.Vizual uchun javobgar shaxs.' },
-    { id: 4, image: "/tg.jpg"   , name:'Shohrux. T', info:'Project manager.Shaxsiy brend Prodyuseri.' },
-    { id: 5, image: "/img5.jpg" , name:'Хudoyor. lv', info:'Montajor 1 yil tajriba Aeleoon.' },
-    { id: 6, image: "/tg.jpg"   , name:'Shohrux. T', info:'Project manager.Shaxsiy brend Prodyuseri.' },
-    { id: 7, image: "/imgg.png" , name:'Umid. Kh', info:'Videograf 1 yil tajriba.Streamer.' },
-  ];
+ const profiles = [
+  { id: 1, image: "/img1.jpg", name:'Shohijaxon.J', info: t("card1_info"), infoPast: t("card1_more") },
+  { id: 2, image: "/img2.jpg", name:'Sirojiddin. Kh', info: t("card2_info"), infoPast: t("card2_more") },
+  { id: 3, image: "/img3.jpg" , name:'Ismailov. I', info: t("card3_info"), infoPast: t("card3_more") },
+  { id: 4, image: "/tg.jpg"   , name:'Shohrux. T', info: t("card4_info"), infoPast: t("card4_more") },
+  { id: 5, image: "/img5.jpg" , name:'Хudoyor. lv', info: t("card5_info"), infoPast: t("card5_more") },
+  { id: 6, image: "/tg.jpg"   , name:'Shohrux. T', info: t("card4_info"), infoPast: t("card4_more") },
+  { id: 7, image: "/imgg.png" , name:'Umid. Kh', info: t("card5_info"), infoPast: t("card5_more") },
+];
+
 
   const startAutoplay = () => {
     if (intervalRef.current) {
@@ -82,7 +85,7 @@ const ProfileCarousel = () => {
             style={getTransform(index)}
             onClick={() => handleCardClick(index)}
           >
-            <ProfileCard image={profile.image} name ={profile.name}  info ={profile.info}/>
+            <ProfileCard image={profile.image} name ={profile.name}  info ={profile.info} infoPast={profile.infoPast} />
           </div>
         ))}
       </div>
