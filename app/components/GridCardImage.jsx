@@ -10,7 +10,7 @@ const reviews = [
     name: "Jack",
     username: "@jack",
     body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/500px-Black_colour.jpg",
+    img: "/Portfolio2.png",
     width: "w-82",
   },
   {
