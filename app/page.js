@@ -65,7 +65,7 @@ export default function Home() {
           {/* HEADER qismi */}
           <div className="header   min-h-screen relative  overflow-hidden">
             {/* SVG chiziqli animatsiya - faqat mobil uchun */}
-            <div className="fixed top-0 lg:-top-10 left-1/2 -translate-x-1/2  w-full pointer-events-none z-10">
+            <div className="absolute top-0 lg:-top-10 left-1/2 -translate-x-1/2  w-full pointer-events-none z-10">
               <Image
                 src="/Lineanimation.svg"
                 alt="Decorative lines"
