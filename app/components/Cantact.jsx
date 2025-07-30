@@ -2,6 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
+const InputWrapper = ({ children }) => {
+  return (
+    <div className="animated-border">
+      <div className="inner">{children}</div>
+    </div>
+  );
+};
+
 const OrderForm = () => {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
@@ -67,14 +75,6 @@ const OrderForm = () => {
     return null;
   }
 
-  const InputWrapper = ({ children }) => {
-    return (
-      <div className="animated-border">
-        <div className="inner">{children}</div>
-      </div>
-    );
-  };
-
   return (
     <section className="w-full bg-transparent flex items-center justify-center text-white py-16 px-4 sm:px-8 relative z-10 overflow-x-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start w-full max-w-6xl mx-auto">
@@ -93,7 +93,7 @@ const OrderForm = () => {
           </h2>
 
           {submitStatus === 'success' && (
-            <div className="mb-4 p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-200 text-sm">
+            <div className="mb-8 p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-200 text-sm">
               Xabar muvaffaqiyatli yuborildi!
             </div>
           )}
